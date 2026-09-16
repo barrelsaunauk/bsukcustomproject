@@ -38,7 +38,7 @@
   .hero-full{width:100%;}
   .hero-block{position:relative;overflow:hidden;
     background:linear-gradient(180deg, rgba(22,38,28,0.60) 0%, rgba(22,38,28,0.32) 36%, rgba(22,38,28,0.30) 60%, rgba(22,38,28,0.72) 100%),
-    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf35d1eb5f46f76a290c3.png') center / cover no-repeat;
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab1f77a84eda365aa2392a.jpg') center 18% / cover no-repeat;
     min-height:82vh;display:flex;flex-direction:column;justify-content:space-between;}
   .hero-block .top{max-width:980px;margin:0 auto;padding:92px 24px 0;width:100%;}
   .hero-block .foot{max-width:980px;margin:0 auto;padding:0 24px 60px;width:100%;}
@@ -50,9 +50,10 @@
   .hero-block .foot p{color:#ffffff;font-size:21px;line-height:1.45;max-width:620px;text-shadow:0 2px 7px rgba(0,0,0,0.85), 0 8px 28px rgba(0,0,0,0.45);}
 
   /* picture cards */
-  .pic{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(22,38,28,0.28);}
+  .pic{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(22,38,28,0.28);max-width:460px;margin:0 auto;}
   .pic img{width:100%;display:block;}
-  .pic.narrow{max-width:640px;margin:0 auto;}
+  .pic.narrow{max-width:460px;margin:0 auto;}
+  .split .pic{max-width:100%;}
   .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
   .split .copy p.lede{margin-bottom:0;}
 
@@ -81,9 +82,6 @@
   .build-card ul{list-style:none;}
   .build-card li{font-size:14px;color:var(--ink-l);padding:7px 0;border-bottom:1px solid var(--rule-soft);line-height:1.45;}
   .build-card li:last-child{border-bottom:none;}
-  .diagram-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:24px auto 0;max-width:500px;}
-  .diagram-card img{width:100%;display:block;}
-  .diagram-card .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
   /* forest boxes */
   .forest-box{background:var(--forest);border-radius:22px;padding:40px 44px;color:var(--body-dark);box-shadow:var(--shadow);}
@@ -131,7 +129,7 @@
   .sig-card img{width:100%;display:block;border-radius:10px;}
 
   @media(max-width:760px){
-    .hero-block{min-height:86vh;}
+    .hero-block{min-height:86vh;background-position:center 18%, 62% 18%;}
     .hero-block .top{padding:64px 26px 0;}
     .hero-block .foot{padding:0 26px 44px;}
     .hero-block h1{font-size:36px;}
@@ -198,11 +196,23 @@
     <div class="pic">
       <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab0fa91eb5f46f76a573a6.jpeg" alt="The treatment room on the lawn, porch at the near end and the dome window on the long face">
     </div>
-    <p class="fin-note">Image for structure demonstration purposes. Can be built in an area of your choice.</p>
+    <p class="fin-note" style="margin-left:auto;margin-right:auto;">Image for structure demonstration purposes. Can be built in an area of your choice.</p>
   </div>
 </section>
 
 <section class="dark">
+  <div class="wrap">
+    <div class="kicker">Alongside it</div>
+    <h2>The ice bath <span>decking</span></h2>
+    <p class="lede">Your tub set on a timber deck in the corner by the hedge, with stepping stones across the lawn to it.</p>
+    <div class="pic">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab1dc22e74dc36122dcef6.jpg" alt="The ice bath on its timber decking in the corner of the garden, with stepping stones across the lawn">
+    </div>
+    <p class="fin-note" style="color:var(--body-dark);margin-left:auto;margin-right:auto;">Image for structure demonstration purposes. The planting and stepping stones are shown as an idea for the space.</p>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="kicker">The build</div>
     <h2>Your <span>specification</span></h2>
@@ -273,10 +283,6 @@
           <li>DURELIS TG moisture resistant chipboard, 12mm</li>
         </ul>
       </div>
-    </div>
-    <div class="diagram-card">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa41959bd832ef7bd96d22e.jpeg" alt="Cutaway drawing of the roof, wall and floor build up">
-      <div class="cap">Roof, wall and floor build up</div>
     </div>
   </div>
 </section>
