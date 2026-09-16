@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Treatment Room | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+    --sage:#50795F; --sage-pale:#8fae86; --honey:#C08B41; --honey-l:#D6A868;
+    --tint:#dbe7dd; --tint-l:#eef4ef;
+    --body-dark:#dfe9df;
+    --ink:#3A4240; --ink-l:#5C6663;
+    --hairline:rgba(65,124,81,0.30); --rule-soft:rgba(65,124,81,0.12);
+    --shadow:0 10px 30px rgba(22,38,28,0.12);
+    --face:'Raleway', Arial, Helvetica, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#ffffff;}
+  body{font-family:var(--face);color:var(--ink);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  img{max-width:100%;display:block;}
+  section{padding:70px 0;}
+  section.dark{background:var(--forest-deep);}
+
+  .kicker{font-size:12px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey);margin-bottom:14px;}
+  h2{font-size:38px;font-weight:700;line-height:1.1;letter-spacing:-0.5px;color:var(--ink);margin-bottom:14px;}
+  h2 span{color:var(--honey);}
+  p.lede{font-size:18px;color:var(--ink-l);max-width:640px;margin-bottom:26px;}
+  section.dark h2{color:#ffffff;}
+  section.dark h2 span{color:var(--honey-l);}
+  section.dark p.lede{color:var(--body-dark);}
+
+  /* hero: her lawn, copy at the top, the one line promise at the foot */
+  .hero-full{width:100%;}
+  .hero-block{position:relative;overflow:hidden;
+    background:linear-gradient(180deg, rgba(22,38,28,0.60) 0%, rgba(22,38,28,0.32) 36%, rgba(22,38,28,0.30) 60%, rgba(22,38,28,0.72) 100%),
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf35d1eb5f46f76a290c3.png') center / cover no-repeat;
+    min-height:82vh;display:flex;flex-direction:column;justify-content:space-between;}
+  .hero-block .top{max-width:980px;margin:0 auto;padding:92px 24px 0;width:100%;}
+  .hero-block .foot{max-width:980px;margin:0 auto;padding:0 24px 60px;width:100%;}
+  .hero-block .dash{width:44px;height:3px;background:var(--honey);margin-bottom:16px;}
+  .hero-block .kicker{color:var(--honey);text-shadow:0 2px 8px rgba(0,0,0,0.85);}
+  .hero-block h1{color:#ffffff;font-size:54px;font-weight:700;line-height:1.04;letter-spacing:-1px;max-width:720px;
+    text-shadow:0 2px 7px rgba(0,0,0,0.80), 0 10px 34px rgba(0,0,0,0.50);}
+  .hero-block h1 span{color:var(--honey);}
+  .hero-block .foot p{color:#ffffff;font-size:21px;line-height:1.45;max-width:620px;text-shadow:0 2px 7px rgba(0,0,0,0.85), 0 8px 28px rgba(0,0,0,0.45);}
+
+  /* picture cards */
+  .pic{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(22,38,28,0.28);}
+  .pic img{width:100%;display:block;}
+  .pic.narrow{max-width:640px;margin:0 auto;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .split .copy p.lede{margin-bottom:0;}
+
+  /* the two dome finishes */
+  .fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  .fin{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);}
+  .fin img{width:100%;display:block;}
+  .chip{position:absolute;top:18px;left:18px;background:rgba(22,38,28,0.82);color:#ffffff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:20px;padding:8px 18px;z-index:2;}
+  .fin-note{max-width:680px;color:var(--ink-l);font-size:15px;margin-top:22px;}
+
+  /* spec cards, with a lead feature card */
+  .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .fcard{display:flex;align-items:center;gap:18px;background:#ffffff;border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);border:1px solid var(--hairline);}
+  .fcard .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--forest);font-size:24px;line-height:54px;text-align:center;}
+  .fcard .t{font-size:17px;font-weight:700;color:var(--ink);}
+  .fcard .s{font-size:14px;color:var(--ink-l);}
+  .fcard.feature{grid-column:1 / -1;padding:32px 34px;gap:24px;border-top:4px solid var(--honey);}
+  .fcard.feature .disc{flex:0 0 74px;height:74px;border-radius:37px;font-size:33px;line-height:74px;}
+  .fcard.feature .t{font-size:23px;line-height:1.25;}
+  .fcard.feature .s{font-size:16px;}
+
+  /* build up cards */
+  .build-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px;}
+  .build-card{background:#ffffff;border-radius:18px;padding:26px 24px;box-shadow:var(--shadow);border-top:4px solid var(--honey);}
+  .build-card .bt{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--honey);margin-bottom:12px;}
+  .build-card ul{list-style:none;}
+  .build-card li{font-size:14px;color:var(--ink-l);padding:7px 0;border-bottom:1px solid var(--rule-soft);line-height:1.45;}
+  .build-card li:last-child{border-bottom:none;}
+  .diagram-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:24px auto 0;max-width:500px;}
+  .diagram-card img{width:100%;display:block;}
+  .diagram-card .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+
+  /* forest boxes */
+  .forest-box{background:var(--forest);border-radius:22px;padding:40px 44px;color:var(--body-dark);box-shadow:var(--shadow);}
+  .forest-box .plab{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-bottom:8px;}
+  .forest-box .big{font-size:42px;font-weight:700;color:var(--honey-l);line-height:1.05;}
+  .forest-box .psub{color:var(--body-dark);font-size:16px;margin-top:12px;max-width:560px;}
+  .footprint-box{margin-top:26px;display:flex;align-items:center;gap:26px;}
+  .footprint-box .disc{flex:0 0 64px;height:64px;border-radius:32px;background:rgba(255,255,255,0.10);font-size:28px;line-height:64px;text-align:center;}
+  section.dark .forest-box{border:1px solid rgba(255,255,255,0.12);}
+
+  /* estimate */
+  .est-panel{background:var(--forest);border-radius:22px;padding:40px 44px;box-shadow:var(--shadow);}
+  .est-panel .plab{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--honey-l);margin-bottom:8px;}
+  .est-panel .big{font-size:46px;font-weight:700;color:var(--honey-l);line-height:1.05;}
+  .est-panel .ref-lab{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-top:22px;}
+  .est-panel .ref{font-size:16px;color:var(--body-dark);margin-top:4px;}
+  .est-line{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:16px 0;border-bottom:1px solid rgba(143,174,134,0.26);}
+  .est-line .el-t{color:var(--body-dark);font-size:16px;}
+  .est-line .el-p{color:#ffffff;font-size:20px;font-weight:700;white-space:nowrap;}
+  .est-total{margin-top:22px;}
+  .dep-card{background:#ffffff;border-radius:18px;border-top:4px solid var(--honey);box-shadow:var(--shadow);padding:24px 30px;margin-top:20px;font-size:15px;color:var(--ink-l);display:flex;align-items:center;gap:18px;}
+  .dep-card .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--tint);font-size:24px;line-height:54px;text-align:center;}
+  .dep-card .t{font-weight:700;color:var(--ink);font-size:16px;}
+  .pill-row{text-align:center;margin-top:28px;}
+  .pill{display:inline-block;background:var(--honey);color:#ffffff;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 38px;border-radius:30px;text-decoration:none;box-shadow:0 8px 26px rgba(22,38,28,0.22);}
+
+  /* journey strip */
+  .journey{background:var(--forest);border-radius:22px;padding:34px 20px 38px;text-align:center;box-shadow:var(--shadow);margin-top:26px;}
+  .journey .st{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--honey-l);margin-bottom:22px;}
+  .journey .row{display:flex;justify-content:space-around;max-width:640px;margin:0 auto;}
+  .journey .cell{width:25%;}
+  .journey .disc{width:52px;height:52px;border-radius:26px;background:#3F6A4C;margin:0 auto;font-size:22px;line-height:52px;text-align:center;}
+  .journey .cell.on .disc{width:62px;height:62px;border-radius:31px;background:var(--honey);font-size:26px;line-height:62px;}
+  .journey .cl{margin-top:10px;font-size:11px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--sage-pale);}
+  .journey .cell.on .cl{color:#ffffff;font-weight:700;}
+  .step-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
+  .note-line{max-width:680px;color:var(--ink-l);font-size:15px;margin-top:24px;}
+
+  /* footer */
+  .footer-box{background:var(--ground);padding:56px 24px 48px;text-align:center;margin-top:70px;}
+  .footer-box .logo{width:150px;margin:0 auto 18px;}
+  .footer-box .signoff{color:#ffffff;font-size:18px;font-weight:700;margin-bottom:6px;}
+  .footer-box .dom{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);}
+  .sig-card{background:#ffffff;border-radius:18px;max-width:560px;margin:36px auto 0;padding:12px;box-shadow:0 14px 40px rgba(0,0,0,0.35);}
+  .sig-card img{width:100%;display:block;border-radius:10px;}
+
+  @media(max-width:760px){
+    .hero-block{min-height:86vh;}
+    .hero-block .top{padding:64px 26px 0;}
+    .hero-block .foot{padding:0 26px 44px;}
+    .hero-block h1{font-size:36px;}
+    .hero-block .foot p{font-size:18px;}
+    h2{font-size:30px;}
+    .split{grid-template-columns:1fr;gap:26px;}
+    .fin-grid{grid-template-columns:1fr;}
+    .card-grid,.step-grid{grid-template-columns:1fr;}
+    .fcard.feature{padding:26px 24px;}
+    .fcard.feature .t{font-size:20px;}
+    .build-grid{grid-template-columns:1fr;}
+    .forest-box{padding:32px 26px;}
+    .est-panel{padding:32px 26px;}
+    .est-panel .big{font-size:34px;}
+    .journey .row{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-full">
+  <div class="hero-block">
+    <div class="top">
+      <div class="dash"></div>
+      <div class="kicker">Prepared for Nikki Burnett</div>
+      <h1>Your lawn as it is <span>today</span></h1>
+    </div>
+    <div class="foot">
+      <p>A bespoke treatment room with a panoramic dome window, and a nook to sit in.</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="copy">
+        <div class="kicker">Start inside</div>
+        <h2>The <span>nook</span></h2>
+        <p class="lede">A panoramic dome window with a seat built into its base. A shelf for towels and treatment oils, or a spot to sit with cushions and a book between clients.</p>
+      </div>
+      <div class="pic">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf356c2e80423bcf566cb.png" alt="The nook, a cushioned bench built into the base of the dome window, looking out to the garden">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" style="padding-top:0;">
+  <div class="wrap" style="padding-top:70px;">
+    <div class="kicker">Step back</div>
+    <h2>The <span>treatment</span> room</h2>
+    <p class="lede">Thermowood inside and out, a warm LED cove, and a glass door at each end so clients walk in one side and out the other.</p>
+    <div class="pic">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf3562e74dc361229c882.png" alt="Inside the treatment room, the massage table in the centre, twin basins on the back wall and the garden through the dome window">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">In your garden</div>
+    <h2>Two <span>finishes</span> for the dome</h2>
+    <p class="lede">Choose how dark you want the dome to be from outside.</p>
+    <div class="fin-grid">
+      <div class="fin">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf3572e74dc361229c8be.png" alt="The treatment room on the lawn with the blackout finish dome">
+        <div class="chip">Blackout finish</div>
+      </div>
+      <div class="fin">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf35637639ce00ca7c598.png" alt="The treatment room on the lawn with the tint globe dome">
+        <div class="chip">Tint globe</div>
+      </div>
+    </div>
+    <p class="fin-note">An impression of the room in your garden. Not a photograph, and details will vary in the finished build.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="kicker">The build</div>
+    <h2>Your <span>specification</span></h2>
+    <p class="lede">Everything below is included in the room price further down this page.</p>
+    <div class="pic narrow">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaaf751e51ec8fd0baa3cc5.png" alt="The treatment room, vertical thermowood cladding, black trim, glass door in the end wall and the dome window on the front">
+    </div>
+    <div class="card-grid">
+      <div class="fcard feature"><div class="disc">&#127758;</div><div><div class="t">Panoramic dome window with a built in nook</div><div class="s">One way glass. Dark from outside, clear from inside. A timber bench built into its base with the same timber inner ring as our globe saunas</div></div></div>
+      <div class="fcard"><div class="disc">&#129717;</div><div><div class="t">Insulated wall panels</div><div class="s">Thermowood</div></div></div>
+      <div class="fcard"><div class="disc">&#128682;</div><div><div class="t">Two tempered glass doors</div><div class="s">Thermowood handles, one in each end wall</div></div></div>
+      <div class="fcard"><div class="disc">&#129695;</div><div><div class="t">Black framed tinted glazing</div><div class="s">Doors 700mm by 2000mm</div></div></div>
+      <div class="fcard"><div class="disc">&#127968;</div><div><div class="t">Insulated roof panels</div><div class="s">Covered with bituminous roofing membranes</div></div></div>
+      <div class="fcard"><div class="disc">&#128208;</div><div><div class="t">Sheet metal trim</div></div></div>
+      <div class="fcard"><div class="disc">&#128161;</div><div><div class="t">Warm LED cove lighting</div><div class="s">Around the room</div></div></div>
+      <div class="fcard"><div class="disc">&#128266;</div><div><div class="t">Harvia heatproof speakers</div><div class="s">Built into the wall</div></div></div>
+      <div class="fcard"><div class="disc">&#129525;</div><div><div class="t">100mm stone wool insulation</div><div class="s">In the walls, roof and floor</div></div></div>
+    </div>
+    <div class="forest-box footprint-box">
+      <div class="disc">&#128207;</div>
+      <div>
+        <div class="plab">Footprint</div>
+        <div class="big" style="font-size:30px;">3.3m by 2.3m</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">On paper</div>
+    <h2>How it is <span>built</span></h2>
+    <p class="lede">Every panel is a full insulated build up, not a clad frame.</p>
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="bt">Roof</div>
+        <ul>
+          <li>Self adhesive bitumen layer</li>
+          <li>DURELIS TG moisture resistant chipboard, 12mm</li>
+          <li>Timber battens, ventilation space, 18mm</li>
+          <li>Diffusion film</li>
+          <li>Pinewood frame, 45 by 95mm</li>
+          <li>Stone wool insulation, 100mm</li>
+          <li>Aluminium sauna paper</li>
+          <li>Inside thermowood panelling, 19mm</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="bt">Wall</div>
+        <ul>
+          <li>Outside thermowood panelling, 32 by 142mm</li>
+          <li>Timber battens, ventilation space, 18mm</li>
+          <li>Diffusion film</li>
+          <li>Pinewood frame, 45 by 95mm</li>
+          <li>Stone wool insulation, 100mm</li>
+          <li>Aluminium sauna paper</li>
+          <li>Inside thermowood panelling, 19mm</li>
+        </ul>
+      </div>
+      <div class="build-card">
+        <div class="bt">Floor</div>
+        <ul>
+          <li>Pine floorboards from inside, 28mm</li>
+          <li>Vapour barrier film</li>
+          <li>Pinewood frame, 45 by 120mm</li>
+          <li>Stone wool insulation, 100mm</li>
+          <li>Diffusion film</li>
+          <li>DURELIS TG moisture resistant chipboard, 12mm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="diagram-card">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa41959bd832ef7bd96d22e.jpeg" alt="Cutaway drawing of the roof, wall and floor build up">
+      <div class="cap">Roof, wall and floor build up</div>
+    </div>
+  </div>
+</section>
+
+<section id="estimate" style="padding-top:0;">
+  <div class="wrap">
+    <div class="kicker">The estimate</div>
+    <h2>Your <span>treatment</span> room</h2>
+    <div class="est-panel">
+      <div class="plab">Your estimate</div>
+      <div class="est-line">
+        <div class="el-t">Treatment room with panoramic dome window and nook, 3.3m by 2.3m</div>
+        <div class="el-p">To be confirmed</div>
+      </div>
+      <div class="est-total">
+        <div class="plab">Total</div>
+        <div class="big">To be confirmed</div>
+      </div>
+      <div class="ref-lab">Reference</div>
+      <div class="ref">Nikki Burnett &nbsp;&middot;&nbsp; Treatment room with panoramic dome window</div>
+    </div>
+    <div class="dep-card">
+      <div class="disc">&#129309;</div>
+      <div>
+        <div class="t">Securing your build spot</div>
+        A &pound;500 deposit secures your place in the build queue. Your deposit comes off the final balance.
+      </div>
+    </div>
+    <div class="pill-row">
+      <a class="pill" href="https://link.fastpaydirect.com/payment-link/6a705158a655fa0b802a7919" target="_blank" rel="noopener">Pay your deposit</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="kicker">From here</div>
+    <h2>What happens <span>next</span></h2>
+    <div class="journey">
+      <div class="st">Your journey</div>
+      <div class="row">
+        <div class="cell on"><div class="disc">&#129309;</div><div class="cl">Deposit &#10022;</div></div>
+        <div class="cell"><div class="disc">&#128221;</div><div class="cl">Spec call</div></div>
+        <div class="cell"><div class="disc">&#128296;</div><div class="cl">In build</div></div>
+        <div class="cell"><div class="disc">&#127968;</div><div class="cl">Installed at yours</div></div>
+      </div>
+    </div>
+    <div class="step-grid">
+      <div class="fcard"><div class="disc">&#129309;</div><div><div class="t">Deposit</div><div class="s">A &pound;500 deposit secures your build spot.</div></div></div>
+      <div class="fcard"><div class="disc">&#128221;</div><div><div class="t">Spec confirmed</div><div class="s">We lock in your full specification and issue your build invoice.</div></div></div>
+      <div class="fcard"><div class="disc">&#128296;</div><div><div class="t">Build queue</div><div class="s">Your build is scheduled into our Welsh workshop and we give you a firm timeline.</div></div></div>
+      <div class="fcard"><div class="disc">&#127968;</div><div><div class="t">Installed at yours</div><div class="s">We install at your home.</div></div></div>
+    </div>
+    <p class="note-line">Any questions at all, just reply to this and we will come straight back to you.</p>
+  </div>
+</section>
+
+<div class="footer-box">
+  <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+  <div class="signoff">The Barrel Sauna UK Team</div>
+  <div class="dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales</div>
+  <div class="sig-card">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Millie, Barrel Sauna UK">
+  </div>
+</div>
+
+</body>
+</html>
