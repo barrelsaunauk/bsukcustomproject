@@ -50,23 +50,13 @@
   /* spec cards, with a lead feature card */
   .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px;}
   .fcard{display:flex;align-items:center;gap:18px;background:#ffffff;border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);}
-  .fcard .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--forest);font-size:24px;line-height:54px;text-align:center;}
+  .fcard .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--forest);font-size:24px;display:flex;align-items:center;justify-content:center;}
   .fcard .t{font-size:17px;font-weight:700;color:var(--ink);}
   .fcard .s{font-size:14px;color:var(--ink-l);}
   .fcard.feature{grid-column:1 / -1;padding:32px 34px;gap:24px;border-top:4px solid var(--honey);}
-  .fcard.feature .disc{flex:0 0 74px;height:74px;border-radius:37px;font-size:33px;line-height:74px;}
+  .fcard.feature .disc{flex:0 0 74px;height:74px;border-radius:37px;font-size:33px;}
   .fcard.feature .t{font-size:23px;line-height:1.25;}
   .fcard.feature .s{font-size:16px;}
-
-  /* heater callout sitting on the render */
-  .ptr{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;}
-  .ptr line{stroke:var(--honey);stroke-width:5;stroke-linecap:round;}
-  .hbub{position:absolute;left:5%;top:62%;width:20%;aspect-ratio:1;border-radius:50%;overflow:hidden;
-    border:3px solid var(--honey);box-shadow:0 12px 34px rgba(0,0,0,0.55);z-index:3;}
-  .hbub img{width:100%;height:100%;object-fit:cover;object-position:34% 58%;transform:scale(1.35);}
-  .hlab{position:absolute;left:5%;top:83.5%;width:30%;z-index:3;color:#ffffff;font-size:12px;font-weight:700;
-    letter-spacing:1.6px;text-transform:uppercase;line-height:1.35;text-shadow:0 2px 8px rgba(0,0,0,0.9);}
-  .hlab span{color:var(--honey-l);display:block;}
 
   /* build up cards */
   .build-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px;}
@@ -75,9 +65,23 @@
   .build-card ul{list-style:none;}
   .build-card li{font-size:14px;color:var(--ink-l);padding:7px 0;border-bottom:1px solid var(--rule-soft);line-height:1.45;}
   .build-card li:last-child{border-bottom:none;}
+  .build-card .tot{margin-top:14px;background:#dbe7dd;border-radius:12px;padding:12px 16px;}
+  .build-card .tot .tl{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--forest-deep);}
+  .build-card .tot .tv{font-size:18px;font-weight:700;color:var(--forest-deep);line-height:1.3;}
+
   .diagram-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:24px auto 0;max-width:500px;}
   .diagram-card img{width:100%;display:block;}
   .diagram-card .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+
+  /* studio piece cards */
+  .studio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px;}
+  .studio-card{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  .studio-card .ph{height:270px;display:flex;align-items:center;justify-content:center;background:#ffffff;padding:16px;}
+  .studio-card .ph img{max-height:100%;width:auto;object-fit:contain;}
+  .studio-card .body{padding:20px 22px 24px;border-top:1px solid var(--rule-soft);flex:1 1 auto;}
+  .studio-card .st{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;}
+  .studio-card .ss{font-size:14px;color:var(--ink-l);margin-top:6px;}
+  .studio-card .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:11px 18px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 
   /* dark forest weight boxes */
   .forest-box{background:var(--forest);border-radius:22px;padding:40px 44px;color:var(--body-dark);box-shadow:var(--shadow);}
@@ -86,7 +90,7 @@
   .forest-box .psub{color:var(--body-dark);font-size:16px;margin-top:12px;max-width:560px;}
 
   .footprint-box{margin-top:26px;display:flex;align-items:center;gap:26px;}
-  .footprint-box .disc{flex:0 0 64px;height:64px;border-radius:32px;background:rgba(255,255,255,0.10);font-size:28px;line-height:64px;text-align:center;}
+  .footprint-box .disc{flex:0 0 64px;height:64px;border-radius:32px;background:#3F6A4C;font-size:28px;display:flex;align-items:center;justify-content:center;}
 
   /* before strip */
   .before-strip{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-top:20px;}
@@ -106,8 +110,7 @@
   .dream .dwrap{max-width:1180px;margin:0 auto;padding:0 24px;}
   .dream .dtop{color:#ffffff;font-size:42px;font-weight:700;line-height:1.1;letter-spacing:-0.5px;margin-bottom:30px;}
   .dream .dtop span{color:var(--honey-l);}
-  .dream .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
-  .dream .dcard{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,0.45);}
+  .dream .dcard{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,0.45);max-width:760px;margin:0 auto;}
   .dream .dcard img{width:100%;height:100%;object-fit:cover;display:block;}
   .dream .dbot{color:#ffffff;font-size:42px;font-weight:700;line-height:1.1;letter-spacing:-0.5px;margin-top:30px;text-align:right;}
   .dream .dbot span{color:var(--honey-l);}
@@ -124,7 +127,7 @@
   .est-line .el-p{color:#ffffff;font-size:20px;font-weight:700;white-space:nowrap;}
   .est-total{margin-top:22px;}
   .dep-card{background:#ffffff;border-radius:18px;border-top:4px solid var(--honey);box-shadow:var(--shadow);padding:24px 30px;margin-top:20px;font-size:15px;color:var(--ink-l);display:flex;align-items:center;gap:18px;}
-  .dep-card .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--pistachio-l);font-size:24px;line-height:54px;text-align:center;}
+  .dep-card .disc{flex:0 0 54px;height:54px;border-radius:27px;background:var(--forest);font-size:24px;display:flex;align-items:center;justify-content:center;}
   .dep-card .t{font-weight:700;color:var(--ink);font-size:16px;}
 
   /* journey strip */
@@ -132,8 +135,8 @@
   .journey .st{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--honey-l);margin-bottom:22px;}
   .journey .row{display:flex;justify-content:space-around;max-width:640px;margin:0 auto;}
   .journey .cell{width:25%;}
-  .journey .disc{width:52px;height:52px;border-radius:26px;background:#3F6A4C;margin:0 auto;font-size:22px;line-height:52px;text-align:center;}
-  .journey .cell.on .disc{width:62px;height:62px;border-radius:31px;background:var(--honey);font-size:26px;line-height:62px;}
+  .journey .disc{width:52px;height:52px;border-radius:26px;background:#3F6A4C;margin:0 auto;font-size:22px;display:flex;align-items:center;justify-content:center;}
+  .journey .cell.on .disc{width:62px;height:62px;border-radius:31px;background:var(--honey);font-size:26px;}
   .journey .cl{margin-top:10px;font-size:11px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--sage-pale);}
   .journey .cell.on .cl{color:#ffffff;font-weight:700;}
 
@@ -159,12 +162,11 @@
     .journey .row{max-width:100%;}
     .before-strip img{height:180px;}
     .after-block{padding:0 14px;}
-    .hlab{font-size:10px;letter-spacing:1px;width:40%;}
     .dream{padding:56px 0 62px;}
-    .dream .dgrid{grid-template-columns:1fr;}
     .dream .dtop,.dream .dbot{font-size:28px;}
     .build-grid{grid-template-columns:1fr;}
-    .led-row{flex-direction:column;align-items:flex-start;gap:18px;}
+    .studio-grid{grid-template-columns:1fr;}
+    .studio-card .ph{height:240px;}
   }
 </style>
 </head>
@@ -176,7 +178,7 @@
       <div class="dash"></div>
       <div class="kicker">Prepared for James Mccarthy</div>
       <h1>Your garden <span>sauna</span> and ice bath</h1>
-      <p>A modern sauna with its own changing room, and a double dipper ice bath alongside it, on the base you have already laid.</p>
+      <p>A glass fronted sauna, and a double dipper ice bath alongside it, on the base you have already laid.</p>
       <a class="pill" href="https://link.fastpaydirect.com/payment-link/6a705158a655fa0b802a7919" target="_blank" rel="noopener">Pay your deposit</a>
     </div>
   </div>
@@ -189,21 +191,20 @@
     <p class="lede">Everything below is included in the sauna price further down this page.</p>
     <div class="card-grid">
       <div class="fcard feature"><div class="disc">&#128293;</div><div><div class="t">Harvia Cilindro PC90XE pillar heater</div><div class="s">A steel cage packed with stones, 101.6cm tall. WiFi controlled from your phone, with heat resistant plates fitted behind it</div></div></div>
-      <div class="fcard"><div class="disc">&#129717;</div><div><div class="t">Insulated wall panels</div><div class="s">Thermowood</div></div></div>
+      <div class="fcard"><div class="disc">&#129695;</div><div><div class="t">Double glazed toughened tinted glass window</div><div class="s">1940mm by 1940mm</div></div></div>
+      <div class="fcard"><div class="disc">&#128682;</div><div><div class="t">Tempered tinted glass door</div><div class="s">700mm by 2000mm, with Thermowood handle</div></div></div>
+      <div class="fcard"><div class="disc">&#129717;</div><div><div class="t">Insulated wall panels</div><div class="s">Thermowood inside and out, 164mm thick</div></div></div>
+      <div class="fcard"><div class="disc">&#127968;</div><div><div class="t">Insulated roof panels</div><div class="s">Covered with black bituminous roofing membranes</div></div></div>
       <div class="fcard"><div class="disc">&#129681;</div><div><div class="t">Straight benches</div><div class="s">Thermo-aspen, with back rest</div></div></div>
-      <div class="fcard"><div class="disc">&#129695;</div><div><div class="t">Double glazed tempered glass window</div><div class="s">1940mm by 1940mm</div></div></div>
-      <div class="fcard"><div class="disc">&#128682;</div><div><div class="t">Two tempered glass doors</div><div class="s">Thermowood handles</div></div></div>
-      <div class="fcard"><div class="disc">&#127968;</div><div><div class="t">Insulated roof panels</div><div class="s">Covered with bituminous roofing membranes</div></div></div>
       <div class="fcard"><div class="disc">&#128208;</div><div><div class="t">Sheet metal trim</div></div></div>
-      <div class="fcard"><div class="disc">&#128161;</div><div><div class="t">Warm under seat lights</div><div class="s">In the sauna</div></div></div>
-      <div class="fcard"><div class="disc">&#10024;</div><div><div class="t">Roof spotlights</div><div class="s">In the changing room</div></div></div>
+      <div class="fcard"><div class="disc">&#128161;</div><div><div class="t">Warm under seat lights</div></div></div>
     </div>
     <div class="forest-box footprint-box">
       <div class="disc">&#128207;</div>
       <div>
-        <div class="plab">Footprint</div>
-        <div class="big" style="font-size:30px;">3.4m wide by 2.4m deep</div>
-        <div class="psub">Sized to sit on your concrete base against the barn.</div>
+        <div class="plab">Inside area</div>
+        <div class="big" style="font-size:34px;">4.1 m&sup2;</div>
+        <div class="psub">A compact cube, sized to sit on your concrete base against the barn.</div>
       </div>
     </div>
   </div>
@@ -218,43 +219,72 @@
       <div class="build-card">
         <div class="bt">Roof</div>
         <ul>
-          <li>Self adhesive bitumen layer</li>
-          <li>DURELIS TG moisture resistant chipboard, 12mm</li>
-          <li>Timber battens, ventilation space, 18mm</li>
-          <li>Diffusion film</li>
-          <li>Pinewood frame, 45 by 95mm</li>
+          <li>Black bituminous roofing membranes</li>
+          <li>OSB from outside, 10mm</li>
+          <li>Structural pine framework, 45 by 95mm</li>
           <li>Stone wool insulation, 100mm</li>
-          <li>Aluminium sauna paper</li>
-          <li>Inside thermowood panelling, 19mm</li>
+          <li>Thermowood panelling from inside, 19mm</li>
         </ul>
+        <div class="tot"><div class="tl">Insulated roof thickness</div><div class="tv">124mm</div></div>
       </div>
       <div class="build-card">
         <div class="bt">Wall</div>
         <ul>
-          <li>Outside thermowood panelling, 32 by 142mm</li>
-          <li>Timber battens, ventilation space, 18mm</li>
-          <li>Diffusion film</li>
-          <li>Pinewood frame, 45 by 95mm</li>
+          <li>Thermowood panelling from outside, 32 by 142mm</li>
+          <li>Structural pine frame, 45 by 95mm</li>
           <li>Stone wool insulation, 100mm</li>
-          <li>Aluminium sauna paper</li>
-          <li>Inside thermowood panelling, 19mm</li>
+          <li>Thermowood panelling from inside, 19mm</li>
         </ul>
+        <div class="tot"><div class="tl">Insulated wall thickness</div><div class="tv">164mm</div></div>
       </div>
       <div class="build-card">
         <div class="bt">Floor</div>
         <ul>
-          <li>Pine floorboards from inside, 28mm</li>
-          <li>Vapour barrier film</li>
-          <li>Pinewood frame, 45 by 120mm</li>
+          <li>DURELIS TG moisture resistant chipboard from outside, 12mm</li>
+          <li>Structural pine frame, 45 by 120mm</li>
           <li>Stone wool insulation, 100mm</li>
-          <li>Diffusion film</li>
-          <li>DURELIS TG moisture resistant chipboard, 12mm</li>
+          <li>Pine floorboards from inside, 28mm</li>
         </ul>
+        <div class="tot"><div class="tl">Insulated floor thickness</div><div class="tv">158mm</div></div>
       </div>
     </div>
     <div class="diagram-card">
       <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa41959bd832ef7bd96d22e.jpeg" alt="Cutaway drawing of the roof, wall and floor build up">
       <div class="cap">Roof, wall and floor build up</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="kicker">To scale</div>
+    <h2>Piece by <span>piece</span></h2>
+    <p class="lede">The three pieces on their own, so you can see the shape and the size of each one.</p>
+    <div class="studio-grid">
+      <div class="studio-card">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab956a2c74c2d9e5037c54.jpg" alt="The glass fronted sauna cube"></div>
+        <div class="body">
+          <div class="st">Your sauna</div>
+          <div class="ss">Thermowood throughout, with a flat roof and a full height glass front. 4.1 m&sup2; inside.</div>
+        </div>
+        <div class="cap">The sauna</div>
+      </div>
+      <div class="studio-card">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab956a37639ce00cb5454f.png" alt="The double dipper Thermowood ice bath with its step"></div>
+        <div class="body">
+          <div class="st">Your double dipper</div>
+          <div class="ss">Two person oval, 190cm by 130cm outside, shown with its insulated lid and step. Electric, so it chills for a cold plunge or heats for a warm soak.</div>
+        </div>
+        <div class="cap">The ice bath</div>
+      </div>
+      <div class="studio-card">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab956a9f8b31b6ab5a1525.jpg" alt="Harvia Cilindro PC90XE pillar heater"></div>
+        <div class="body">
+          <div class="st">Your heater</div>
+          <div class="ss">Harvia Cilindro PC90XE, 101.6cm tall, with the control panel on the front.</div>
+        </div>
+        <div class="cap">The heater</div>
+      </div>
     </div>
   </div>
 </section>
@@ -279,41 +309,30 @@
     <div class="kicker">Your space</div>
     <h2>From <span>ready</span> to relaxing</h2>
     <div class="before-strip">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa41946770fd0c165a4930d.jpg" alt="The prepared base at your home as it is today">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab956aaabc65fd5d1d1493.jpg" alt="The prepared base at your home as it is today">
       <div class="chip">Before</div>
     </div>
   </div>
   <div class="after-block">
     <div class="after-frame">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa427fd770fd0c165a629e8.jpg" alt="An impression of the same view with your sauna and ice bath in place">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab95cf42c38177da801720.jpg" alt="An impression of the same view with your sauna and ice bath in place">
       <div class="chip on">After</div>
-      <svg class="ptr" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <line x1="216" y1="661" x2="288" y2="598"></line>
-        <line x1="181" y1="639" x2="243" y2="528"></line>
-      </svg>
-      <div class="hbub"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa436849f8b31b6abb653dd.png" alt="Harvia Cilindro pillar heater"></div>
-      <div class="hlab"><span>Your actual heater</span>Harvia Cilindro PC90XE</div>
     </div>
   </div>
   <div class="wrap">
-    <p class="note-line">An impression created from the video of your garden. Not a photograph, and details will vary in the finished build. The heater drawn inside the sauna is indicative only. Yours is the Harvia Cilindro PC90XE, shown in the circle.</p>
+    <p class="note-line">An impression created from the photograph of your garden. Not a photograph of the finished build, and details will vary.</p>
+    <p class="note-line">The ice bath drawn in this impression is indicative only. Yours is the double dipper oval, shown on its own further up this page.</p>
     <p class="note-line">Your concrete base measures 6m wide by 2.5m deep. The sauna sits against the barn with the ice bath in the corner beside the screen.</p>
   </div>
 </section>
 
 <div class="dream">
   <div class="dwrap">
-    <div class="dtop">Your <span>view</span></div>
-    <div class="dgrid">
-      <div class="dcard">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa42774bd4cad1925927a7e.jpg" alt="The view from inside the sauna on a rainy day">
-      </div>
-      <div class="dcard">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa42742cbbb2538118ab7ae.jpg" alt="The view from inside the sauna at sunset">
-      </div>
+    <div class="dtop">Your interior <span>view</span>, Harvia heater in place</div>
+    <div class="dcard">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aab956caabc65fd5d1d14b5.jpg" alt="Inside the sauna, looking out through the glass">
     </div>
-    <div class="dbot">...Come rain or <span>shine</span></div>
-    <div class="dnote">The seating in these images is arranged to show the under seat lighting. Your benches are straight, as listed in the specification.</div>
+    <div class="dbot">and your two-tier seating with <span>LED lights</span></div>
   </div>
 </div>
 
@@ -324,7 +343,7 @@
     <div class="est-panel">
       <div class="plab">Your estimate</div>
       <div class="est-line">
-        <div class="el-t">Modern sauna with changing room, 3.4m by 2.4m</div>
+        <div class="el-t">Glass fronted Thermowood sauna, 4.1 m&sup2; inside</div>
         <div class="el-p">&pound;14,995 + VAT</div>
       </div>
       <div class="est-line">
@@ -336,7 +355,7 @@
         <div class="big">&pound;20,990 + VAT</div>
       </div>
       <div class="ref-lab">Reference</div>
-      <div class="ref">James Mccarthy &nbsp;&middot;&nbsp; Modern sauna and double dipper ice bath</div>
+      <div class="ref">James Mccarthy &nbsp;&middot;&nbsp; Glass fronted sauna and double dipper ice bath</div>
     </div>
     <div class="dep-card">
       <div class="disc">&#129309;</div>
