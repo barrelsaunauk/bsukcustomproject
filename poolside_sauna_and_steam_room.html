@@ -33,7 +33,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative; min-height:92vh; overflow:hidden;
-    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6d7ef452865af90650.jpg') center center/cover no-repeat;
+    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6d7ef452865af90650.jpg?v=2') center center/cover no-repeat;
     display:flex; align-items:center;
   }
   .hero .veil{position:absolute;inset:0;pointer-events:none;
@@ -72,7 +72,7 @@
   .tight-top{padding-top:36px;}
 
   /* brief cards, white on white block variant */
-  .brief{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
+  .brief{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;}
   .wblock{background:#ffffff;border-radius:18px;box-shadow:var(--shadow);padding:26px 24px;}
   .wblock .lb{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
   .wblock .hd{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3;}
@@ -150,11 +150,23 @@
   .liftcard p{max-width:none;}
   .liftcard p:last-child{margin-bottom:0;}
 
+  /* steam room spec cards */
+  .specs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
+  .specs .wblock{padding:30px 30px 26px;}
+  .specs .lb{margin-bottom:12px;}
+  .specs ul{list-style:none;margin:0;padding:0;}
+  .specs li{padding:10px 0;border-bottom:1px solid var(--rule-soft);font-size:15px;color:var(--ink-l);line-height:1.55;}
+  .specs li:last-child{border-bottom:0;padding-bottom:0;}
+  .specs .yours{background:var(--forest);}
+  .specs .yours .lb{color:var(--honey-l);}
+  .specs .yours li{color:var(--body-dark);border-bottom-color:rgba(143,174,134,0.26);}
+
   /* circle insert */
   .circ{display:flex;align-items:center;gap:30px;margin-top:40px;}
   .circ .cimg{flex:0 0 175px;width:175px;height:175px;border-radius:50%;overflow:hidden;border:1px solid var(--hairline);}
   .circ .cimg img{width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;}
   .circ .ccap{font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);line-height:1.7;}
+  .circ .csub{font-size:14px;color:var(--ink-l);margin-top:8px;max-width:260px;}
   .circrow{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;}
   .circrow .circ{margin-top:0;gap:22px;}
   .circ.big .cimg{flex:0 0 240px;width:240px;height:240px;}
@@ -301,6 +313,7 @@
 
   @media (max-width:860px){
     .brief{grid-template-columns:1fr 1fr;}
+    .brief .wblock:last-child:nth-child(odd){grid-column:1 / -1;}
   }
   @media (max-width:720px){
     .hero{background-image:none;background-color:var(--ground);min-height:0;display:flex;flex-direction:column;}
@@ -311,7 +324,7 @@
     .hero-inner{padding:0 24px 48px;margin-top:-40px;}
     .hero h1{font-size:clamp(34px,9vw,44px);}
     .hero p.sub{font-size:16px;}
-    .badges,.reels,.reviews .rgrid2,.grid,.delivery,.card-grid,.est-grid,.size-box,.brief,.trio,.pair{grid-template-columns:1fr;}
+    .badges,.reels,.reviews .rgrid2,.grid,.delivery,.card-grid,.est-grid,.size-box,.brief,.trio,.pair,.specs{grid-template-columns:1fr;}
     .hero-inner{padding-bottom:64px;}
     .hero h1{letter-spacing:-0.5px;}
     section{padding:60px 0;}
@@ -354,7 +367,7 @@
     <div class="scrollhint">Scroll to explore</div>
   </div>
   <div class="hero-pic">
-    <img class="hero-mobile" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6d7ef452865af90650.jpg" alt="Your sauna and steam room cabin beside the pool, seen from above">
+    <img class="hero-mobile" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6d7ef452865af90650.jpg?v=2" alt="Your sauna and steam room cabin on the terrace">
     <div class="hero-fade"></div>
   </div>
 </div>
@@ -367,13 +380,13 @@
     <p class="lede">The tiled terrace beside your pool, with the glass balustrade behind it and the trees over it.</p>
 
     <div class="imgcard wide">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6a5597aeb9d7d6a3dd.jpg" alt="Your tiled terrace, cleared and ready">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6a5597aeb9d7d6a3dd.jpg?v=2" alt="Your tiled terrace, cleared and ready">
       <div class="cap">Your terrace</div>
       <div class="expl">Your terrace as it is today, cleared and ready for the build.</div>
     </div>
 
     <div class="imgcard wide">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6a7ef452865af905f4.jpg" alt="Your sauna and steam room cabin in place on the terrace">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6a7ef452865af905f4.jpg?v=2" alt="Your sauna and steam room cabin in place on the terrace">
       <div class="cap">In place</div>
       <div class="expl">Your cabin on the terrace, shown here in dark grey. The cladding colour is your choice, see below.</div>
     </div>
@@ -382,7 +395,6 @@
       <div class="wblock"><div class="lb">The footprint</div><div class="hd">3.5m by 1.6m</div><div class="bd">The tiled concrete slab base, as measured on site.</div></div>
       <div class="wblock"><div class="lb">The rooms</div><div class="hd">Sauna and steam room</div><div class="bd">Two rooms side by side along one glazed front, each with its own door.</div></div>
       <div class="wblock"><div class="lb">The outlook</div><div class="hd">Facing the pool</div><div class="bd">The glass and the doors face the pool and the view, so you see out from both rooms.</div></div>
-      <div class="wblock"><div class="lb">Room to grow</div><div class="hd">Up to 2ft deeper</div><div class="bd">Taking out the glass balustrade gives the build more depth. James confirms this with you on your call.</div></div>
     </div>
   </div>
 </section>
@@ -404,7 +416,7 @@
       <div class="fcard feature"><div class="disc">&#128293;</div><div><div class="t">Harvia WiFi electric heater</div><div class="s">Connects to an app on your phone. Turn it on and off remotely and set timers, so it is hot when you walk out to it. Volcanic stones included.</div></div></div>
       <div class="fcard"><div class="disc">&#129681;</div><div><div class="t">Tiered timber benches</div><div class="s">Two levels along the back wall of the sauna</div></div></div>
       <div class="fcard"><div class="disc">&#129695;</div><div><div class="t">Full height glass front</div><div class="s">Two glass doors, one into each room</div></div></div>
-      <div class="fcard"><div class="disc">&#128167;</div><div><div class="t">Tiled steam room</div><div class="s">Tiled walls, floor and bench, with its own glass door</div></div></div>
+      <div class="fcard"><div class="disc">&#128167;</div><div><div class="t">Tiled steam room</div><div class="s">Tiled walls, floor and bench, a curved ceiling, and its own glass door</div></div></div>
       <div class="fcard"><div class="disc">&#127794;</div><div><div class="t">Vertical slatted cladding</div><div class="s">Light grey, with dark trim at every corner</div></div></div>
       <div class="fcard"><div class="disc">&#128161;</div><div><div class="t">Under seat LEDs</div><div class="s">Warm light under the benches</div></div></div>
       <div class="fcard"><div class="disc">&#128297;</div><div><div class="t">Stainless steel fixings</div><div class="s">Throughout</div></div></div>
@@ -457,17 +469,46 @@
 
     <div class="pair">
       <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6ab4d207ff9df244fd.png" alt="From the sauna, through the glass door into the steam room"></div>
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab89b6ab4d207ff9df244fd.png?v=2" alt="From the sauna, through the glass door into the steam room"></div>
         <div class="cap">Sauna to steam room</div>
-        <div class="expl">From the sauna bench, through the glass door into the steam room.</div>
+        <div class="expl">From the sauna bench, through the glass door into the steam room. The tiled ceiling curves so condensation runs down the walls and never drips on you.</div>
       </div>
       <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab8a8337ef452865af9c35d.jpg" alt="Inside the sauna, with the heater, the benches and the pool through the glass"></div>
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab8a8337ef452865af9c35d.jpg?v=2" alt="Inside the sauna, with the heater, the benches and the pool through the glass"></div>
         <div class="cap">The sauna</div>
         <div class="expl">Inside the sauna: the heater, the benches and the pool through the glass.</div>
       </div>
     </div>
     <p class="note-line">Renders of your build, not photographs. Details will vary in the finished cabin.</p>
+  </div>
+</section>
+
+<!-- THE STEAM ROOM -->
+<section class="tint">
+  <div class="wrap reveal">
+    <div class="kicker">The steam room</div>
+    <h2>Built for <span>steam</span></h2>
+    <p class="lede">A steam room is a wet room, so it is built differently from the sauna beside it. Here is what we build, and what your side provides before we install.</p>
+    <div class="specs">
+      <div class="wblock">
+        <div class="lb">What we build</div>
+        <ul>
+          <li>Curved tiled ceiling, so condensation runs down the walls and never drips on you</li>
+          <li>Fully tiled walls, floor and bench. No timber inside the steam room</li>
+          <li>Toughened glass door with stainless steel hinges and bar handle</li>
+          <li>Harvia 4.5 kW steam generator with WiFi control, sized to the room</li>
+        </ul>
+      </div>
+      <div class="wblock yours">
+        <div class="lb">What your side provides before installation</div>
+        <ul>
+          <li>A drain connection at the cabin for the steam room floor</li>
+          <li>A cold water feed to the generator</li>
+          <li>A 230V electrical supply on a 25A fuse, connected by your qualified electrician</li>
+          <li>A dry, ventilated service space for the generator within 6m of the steam room</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -504,7 +545,7 @@
       </div>
       <div class="circ big">
         <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab8af32be703c7b301b202a.png" alt="Warm LED lighting under the sauna benches" style="object-position:center 55%;"></div>
-        <div class="ccap">Optional LED<br>lighting add-on</div>
+        <div><div class="ccap">Under seat LEDs,<br>added for you</div><div class="csub">Normally an optional extra. Included in your build.</div></div>
       </div>
     </div>
   </div>
@@ -520,8 +561,19 @@
   </div>
 </div>
 
+<!-- BUILD UP DRAWING -->
+<section class="tight-bottom">
+  <div class="wrap reveal">
+    <div class="imgcard wide" style="margin-top:0;">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa41959bd832ef7bd96d22e.jpeg" alt="Cutaway drawing of the roof, wall and floor build up">
+      <div class="cap">Build up</div>
+      <div class="expl">Roof, wall and floor, layer by layer.</div>
+    </div>
+  </div>
+</section>
+
 <!-- PREVIOUS INSTALLS AND HAPPY CLIENTS -->
-<section>
+<section class="tight-top">
   <div class="wrap reveal">
     <h2 class="center">Check out some previous installs and <span class="accent">happy clients</span></h2>
 
