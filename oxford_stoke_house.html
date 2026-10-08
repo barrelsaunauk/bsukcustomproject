@@ -963,10 +963,13 @@
 </footer>
 
 <script>
+  /* threshold 0: a section fades in as soon as any part of it reaches the screen, so tall sections can never get stuck invisible */
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold: 0.15});
+  }, {threshold: 0, rootMargin: '0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  /* belt and braces: anything still hidden after four seconds is shown */
+  setTimeout(function(){ document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }, 4000);
 </script>
 </body>
 </html>
