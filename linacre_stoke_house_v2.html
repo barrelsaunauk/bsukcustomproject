@@ -359,6 +359,50 @@
     .pbox .ti{flex:none;}
     .pbox .ico{flex:none;}
   }
+
+  /* globe photo board: big photo and writing left, two photos right, labels live over the photo */
+  .gboard{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-top:30px;align-items:stretch;}
+  .gboard .gcol{display:flex;flex-direction:column;gap:18px;}
+  .gph{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:var(--ground);}
+  .gph img{width:100%;height:100%;object-fit:cover;display:block;}
+  .gph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--veil),0.62) 0%,rgba(var(--veil),0.14) 34%,rgba(var(--veil),0) 60%);pointer-events:none;}
+  .gph .glab{position:absolute;top:18px;left:20px;right:20px;z-index:1;color:#ffffff;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;line-height:1.5;}
+  .gph.big{aspect-ratio:4/3;}
+  .gph.small{flex:1 1 0;min-height:200px;}
+  .gph.yard img{object-position:center 60%;}
+  .gwrite{background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:18px;box-shadow:var(--shadow);padding:30px 32px;flex:1 1 auto;}
+  .gwrite h3{margin-bottom:10px;}
+  .gwrite p{font-size:15px;color:var(--ink-l);max-width:none;}
+  .gwrite p:last-child{margin-bottom:0;}
+
+  /* caption line under a photo card tab */
+  .pcard .expl{padding:10px 16px 14px;font-size:13px;line-height:1.5;color:var(--sage);background:#ffffff;}
+
+  /* two equal photo cards */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
+  .duo .pcard .ph{aspect-ratio:4/5;}
+  .duo .pcard .ph img{width:100%;height:100%;object-fit:cover;}
+
+  /* lighting block with circle insert */
+  .lightrow{display:flex;align-items:center;gap:34px;margin-top:44px;background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:18px;box-shadow:var(--shadow);padding:34px 36px;}
+  .lightrow .cimg{flex:0 0 220px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:1px solid var(--hairline);background:#0d0d0b;}
+  .lightrow .cimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;transform:scale(1.16) translateX(-3%);transform-origin:50% 50%;}
+  .lightrow .ccap{font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+  .lightrow p{font-size:15px;color:var(--ink-l);max-width:none;}
+  .lightrow p:last-child{margin-bottom:0;}
+
+  /* layout drawings */
+  .layouts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;align-items:start;}
+  .layouts .imgcard{margin:0;max-width:none;}
+  .layouts .imgcard.wide{grid-column:1 / -1;}
+
+  @media (max-width:720px){
+    .gboard,.duo,.layouts{grid-template-columns:1fr;}
+    .gph.small{min-height:0;aspect-ratio:4/3;flex:none;}
+    .gwrite{padding:24px 20px;}
+    .lightrow{flex-direction:column;text-align:center;padding:28px 20px;gap:22px;}
+    .lightrow .cimg{flex:0 0 200px;width:200px;height:200px;}
+  }
 </style>
 </head>
 <body>
@@ -403,7 +447,7 @@
     <p class="lede">Everything below is handcrafted to order in the same workshop, by the same team.</p>
     <div class="pstack">
       <div class="pbox">
-        <div class="ico"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908e5.png" alt="Barrel sauna line drawing"></div>
+        <div class="ico"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac76d5d195f9172edeafe23.jpg" alt="6m globe sauna line drawing"></div>
         <div class="ti">6m globe sauna</div>
         <div class="bd">Full changing room, porch and large sauna capacity, with a panoramic globe window and a side placed WiFi heater.</div>
       </div>
@@ -428,10 +472,28 @@
     <h2>The 6m <span>globe</span> sauna with changing room</h2>
     <p class="lede">Our Grand length, with a full changing room, porch and large sauna capacity, and a panoramic globe window across the back wall.</p>
 
-    <div class="imgcard">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850cb9a9c7792ea50e3e6.jpg" alt="One of our barrel saunas with a tinted panoramic globe window">
-      <div class="cap">Panoramic globe window</div>
-      <div class="expl">Tinted glass lets you see out while maintaining privacy from outside.</div>
+    <div class="gboard">
+      <div class="gcol">
+        <div class="gph big">
+          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg" alt="A globe sauna in our workshop, looking through the globe window to the benches inside">
+          <div class="glab">In our workshop</div>
+        </div>
+        <div class="gwrite">
+          <h3>A window across the <span class="accent">whole back wall</span></h3>
+          <p>The globe window fills the back of the barrel, so the view runs right through the sauna from the benches. Tinted glass lets you see out while maintaining privacy from outside.</p>
+          <p>Inside, the seating faces the glass, with an interchangeable middle plank that drops in or out in seconds. For a fully private sauna the globe also comes in blackout glass.</p>
+        </div>
+      </div>
+      <div class="gcol">
+        <div class="gph small yard">
+          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7704b8c077584b4f4a4fb.jpg" alt="A finished globe sauna in our yard">
+          <div class="glab">Ready to leave the yard</div>
+        </div>
+        <div class="gph small">
+          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7735c8c077584b4f4db29.jpg" alt="A globe sauna with blackout glass">
+          <div class="glab">Blackout glass</div>
+        </div>
+      </div>
     </div>
 
     <div class="card-grid">
@@ -464,19 +526,31 @@
 
     <div class="trio">
       <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850b003343f290f69b50f.jpg" alt="One of our barrel saunas with a blackout globe window"></div>
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac773d6195f9172edeb9a93.jpg" alt="One of our barrel saunas with a blackout globe window"></div>
         <div class="cap">Blackout globe</div>
+        <div class="expl">Full privacy from outside, day or night.</div>
       </div>
       <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774bca9994d35aa05b52d9.jpg" alt="Inside one of our barrels, looking through the porch and changing room into the sauna"></div>
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abe8683612cffc49a2738f8.jpg" alt="Inside one of our barrels, looking through the changing room into the sauna"></div>
         <div class="cap">Through the changing room</div>
+        <div class="expl">Two doors between the outside and the sauna.</div>
       </div>
       <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab26bc2bdaa5e26a98e1363.jpg" alt="Stainless steel bands and the shingle roof on one of our barrel saunas"></div>
-        <div class="cap">Bands and shingles</div>
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac77608c478ac5535445f4c.jpg" alt="The view from the changing room through to the integrated seating and the globe window"></div>
+        <div class="cap">Changing room to globe</div>
+        <div class="expl">The view from the changing room all the way through to the integrated seating and the globe window.</div>
       </div>
     </div>
     <p class="note-line">Photographs of barrels we built for other customers. Your sauna is built to the specification above.</p>
+
+    <div class="lightrow">
+      <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78548003343f290f712646.jpeg" alt="Warm under seat lighting glowing beneath the benches, seen through a globe window at night"></div>
+      <div>
+        <div class="ccap">Under seat lighting</div>
+        <h3>Lit for evening <span class="accent">sessions</span></h3>
+        <p>Your specification asked for lighting, so warm LED strips run under the benches. They are heat proof and waterproof, and switch on from an IP rated wall switch, giving a soft glow inside the sauna and through the globe after dark.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -488,7 +562,7 @@
     <p class="lede">Contrast bathing between sauna and cold plunge for maximum benefit, built alongside your sauna to the same spec and finish.</p>
 
     <div class="imgcard">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a3adc9a6c7937b60d1bd.jpeg" alt="One of our Double Dippers with the electric chiller and heater unit, outdoors">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba10d4c13d4373c2d6c7b4.png" alt="One of our Double Dippers with the electric chiller and heater unit, outdoors">
       <div class="cap">Double Dipper</div>
       <div class="expl">The electric version: no wood required, clean and convenient.</div>
     </div>
@@ -503,7 +577,7 @@
       <div class="fcard"><div class="disc">&#128297;</div><div><div class="t">Stainless steel bands</div><div class="s">Natural wood construction to match your sauna</div></div></div>
     </div>
 
-    <div class="trio">
+    <div class="duo">
       <div class="pcard">
         <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78539888808720193dd452.png" alt="Inside one of our Double Dippers, with the seating"></div>
         <div class="cap">Double Dipper inside</div>
@@ -512,19 +586,20 @@
         <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa11249bfc1456f8c7ad890.jpg" alt="One of our single dipper cold plunges"></div>
         <div class="cap">Single dipper</div>
       </div>
-      <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78537488808720193d974d.jpg" alt="Inside one of our insulated single dippers"></div>
-        <div class="cap">Single dipper inside</div>
-      </div>
     </div>
     <p class="note-line">Photographs of builds for other customers. Yours are built to order alongside your sauna.</p>
-
-    <div class="circ big">
-      <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00ecf641597c752ac7d5c.jpg" alt="Stainless steel band on one of our cold plunges, close up"></div>
-      <div class="ccap">Bound in<br>stainless steel</div>
-    </div>
   </div>
 </section>
+
+<!-- CLOSE UP DETAILS BAND -->
+<div class="details">
+  <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png" alt="Stainless steel band tensioner on thermowood, close up">
+  <div class="dtext">
+    <div class="bdisc"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab400c7ec718870e13b1869.png" alt="Welsh flag"></div>
+    <h2>Bound in <span>stainless steel</span></h2>
+    <p>Stainless steel tightening bands and fixings throughout. Treated thermowood, heat dried at 200&deg;C with up to 96&#37; of the moisture removed.</p>
+  </div>
+</div>
 
 <!-- YOUR QUESTIONS, ANSWERED -->
 <section class="dark">
@@ -605,22 +680,38 @@
         <div class="ccap">Built in the<br>United Kingdom</div>
       </div>
       <div class="circ big">
-        <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ff6c5641597c752aab2dd.jpg" alt="Turned timber coat hooks inside one of our saunas"></div>
-        <div class="ccap">Timber<br>coat hooks</div>
+        <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba74950f7669012e6e7d6.jpg" alt="Dark wood finish on one of our builds, close up"></div>
+        <div class="ccap">Dark wood<br>finish</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLOSE UP DETAILS BAND -->
-<div class="details">
-  <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png" alt="Stainless steel band tensioner on thermowood, close up">
-  <div class="dtext">
-    <div class="bdisc"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab400c7ec718870e13b1869.png" alt="Welsh flag"></div>
-    <h2>Bound in <span>stainless steel</span></h2>
-    <p>Stainless steel tightening bands and fixings throughout. Treated thermowood, heat dried at 200&deg;C with up to 96&#37; of the moisture removed.</p>
+<!-- YOUR LAYOUT -->
+<section class="tint">
+  <div class="wrap reveal">
+    <div class="opt-chip">Your layout</div>
+    <h2>How your sauna is <span>laid out</span></h2>
+    <p class="lede">The porch and changing room at the front, the sauna and globe window at the back.</p>
+    <div class="layouts">
+      <div class="imgcard wide">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Layout of the sauna showing the porch and changing room">
+        <div class="cap">Your layout</div>
+        <div class="expl">This layout shows the changing room and porch you have chosen.</div>
+      </div>
+      <div class="imgcard">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="Layout showing the U shaped seating and the globe window">
+        <div class="cap">Seating and globe</div>
+        <div class="expl">This layout shows the U shaped seating and the globe window.</div>
+      </div>
+      <div class="imgcard">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba79b5a495b2dbdabbf1b.jpeg" alt="The porch on one of our barrel saunas">
+        <div class="cap">Porch example</div>
+        <div class="expl">The porch on one of our barrels, built for another customer.</div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- PREVIOUS INSTALLS AND HAPPY CLIENTS -->
 <section>
