@@ -33,7 +33,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative; min-height:92vh; overflow:hidden;
-    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e5427b81a3502a8958dbf.jpg') center 35%/cover no-repeat;
+    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac78461c478ac5535453e58.png') center 42%/cover no-repeat;
     display:flex; align-items:flex-end;
   }
   .hero .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(22,38,28,0.36) 0%, rgba(22,38,28,0.16) 40%, rgba(22,38,28,0.88) 100%);}
@@ -92,12 +92,12 @@
   .imgcard .expl{padding:12px 18px 14px;font-size:14px;color:var(--sage);}
 
   /* labelled photo trio */
-  .trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:26px;}
+  .trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:26px;align-items:start;}
   .pcard{background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;}
   .pcard .ph{overflow:hidden;background:#ffffff;}
   .pcard .ph img{width:100%;display:block;}
   .pcard .ph.tight img{transform:scale(1.045);}
-  .pcard .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:11px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:auto;}
+  .pcard .cap{background:var(--forest-deep);border-top:3px solid var(--honey);color:#ffffff;padding:11px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
   .note-line{max-width:680px;color:var(--ink-l);font-size:15px;margin-top:20px;}
 
   /* render slot, review copy only, replaced by our render before upload */
@@ -162,8 +162,11 @@
   .circ .ccap{font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);line-height:1.7;}
   .circrow{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;}
   .circrow .circ{margin-top:0;gap:22px;}
-  .circ.big .cimg{flex:0 0 240px;width:240px;height:240px;}
-  .circ.big .ccap{font-size:14px;}
+  .circ.big .cimg{flex:0 0 320px;width:320px;height:320px;}
+  .circ.big .ccap{font-size:15px;}
+  .circstack{display:flex;flex-direction:column;gap:40px;margin-top:44px;}
+  .circstack .circ{margin-top:0;gap:36px;}
+  .circ.flip{flex-direction:row-reverse;text-align:right;}
   .rowlab{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-top:34px;}
 
   /* close up details band */
@@ -227,16 +230,8 @@
   .dlist .circle.gold{background:var(--honey);}
   .dlist h4{margin:0 0 2px 0;font-size:15px;color:#ffffff;}
   .dlist p{margin:0;font-size:14px;}
-
-  /* interlude */
-  .breather{
-    position:relative;height:62vh; min-height:380px;display:flex;align-items:center;justify-content:center;text-align:center;
-    background:
-      linear-gradient(180deg, rgba(22,38,28,0.62) 0%, rgba(22,38,28,0.62) 100%),
-      url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9c7f52e29b3baf97d7ad10.png') center 55%/cover no-repeat;
-  }
-  .breather p{margin:0 auto;max-width:640px;padding:0 24px;color:#ffffff;font-size:clamp(22px,3vw,30px);font-weight:200;line-height:1.35;}
-  .breather p span{color:var(--honey-l);font-weight:400;}
+  .dlist .dimg{margin-top:26px;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(22,38,28,0.35);}
+  .dlist .dimg img{display:block;width:100%;height:auto;}
 
   /* range and tiles */
   .kicker.center,h2.center{text-align:center;}
@@ -338,7 +333,9 @@
     .circ{flex-direction:column;align-items:center;text-align:center;}
     .circ .ccap br{display:none;}
     .circrow{grid-template-columns:1fr;gap:34px;}
-    .circ.big .cimg{flex:0 0 200px;width:200px;height:200px;}
+    .circ.big .cimg{flex:0 0 240px;width:240px;height:240px;}
+    .circ.flip{flex-direction:column;text-align:center;}
+    .circstack{gap:34px;}
     .details .dtext{padding:56px 24px;}
     .details h2{font-size:26px;}
     .est-line .el-p.soft{max-width:140px;}
@@ -348,8 +345,11 @@
   .pstack{margin-top:30px;}
   .pbox{display:flex;align-items:center;gap:24px;background:#ffffff;border-radius:22px;box-shadow:var(--shadow);padding:22px 28px;margin-bottom:14px;}
   .pbox:last-child{margin-bottom:0;}
-  .pbox .ico{flex:0 0 110px;}
-  .pbox .ico img{width:110px;display:block;}
+  .pbox .ico{flex:0 0 128px;width:128px;height:92px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .pbox .ico img{width:100%;height:100%;object-fit:contain;display:block;}
+  .pbox .ico.globe img{transform:scale(1.38);transform-origin:50% 50%;}
+  .pbox .ico.dipper img{transform:scale(0.92);}
+  .pbox .ico.single img{transform:scale(0.96);}
   .pbox .ti{flex:0 0 170px;font-size:14px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);line-height:1.35;}
   .pbox .bd{font-size:15px;color:var(--ink-l);line-height:1.6;}
   .deposit .est-panel{max-width:640px;margin:0 auto;}
@@ -360,17 +360,17 @@
     .pbox .ico{flex:none;}
   }
 
-  /* globe photo board: big photo and writing left, two photos right, labels live over the photo */
-  .gboard{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-top:30px;align-items:stretch;}
-  .gboard .gcol{display:flex;flex-direction:column;gap:18px;}
+  /* globe gallery: one big photo left, two by two right, the writing card full width underneath */
+  .gboard{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:30px;align-items:stretch;}
   .gph{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:var(--ground);}
-  .gph img{width:100%;height:100%;object-fit:cover;display:block;}
-  .gph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--veil),0.62) 0%,rgba(var(--veil),0.14) 34%,rgba(var(--veil),0) 60%);pointer-events:none;}
-  .gph .glab{position:absolute;top:18px;left:20px;right:20px;z-index:1;color:#ffffff;font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;line-height:1.5;}
+  .gph img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .gph.big{aspect-ratio:4/3;}
-  .gph.small{flex:1 1 0;min-height:200px;}
-  .gph.yard img{object-position:center 60%;}
-  .gwrite{background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:18px;box-shadow:var(--shadow);padding:30px 32px;flex:1 1 auto;}
+  .ggrid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;min-height:0;}
+  .ggrid .gph{min-height:0;}
+  .gph.yard img{object-position:center 58%;}
+  .gph.group img{object-position:center 52%;}
+  .gph.dusk img{object-position:center 45%;}
+  .gwrite{background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:18px;box-shadow:var(--shadow);padding:30px 32px;margin-top:18px;}
   .gwrite h3{margin-bottom:10px;}
   .gwrite p{font-size:15px;color:var(--ink-l);max-width:none;}
   .gwrite p:last-child{margin-bottom:0;}
@@ -378,30 +378,28 @@
   /* caption line under a photo card tab */
   .pcard .expl{padding:10px 16px 14px;font-size:13px;line-height:1.5;color:var(--sage);background:#ffffff;}
 
-  /* two equal photo cards */
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
-  .duo .pcard .ph{aspect-ratio:4/5;}
-  .duo .pcard .ph img{width:100%;height:100%;object-fit:cover;}
+  /* two photo cards side by side, each at natural size */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;align-items:start;}
 
   /* lighting block with circle insert */
   .lightrow{display:flex;align-items:center;gap:34px;margin-top:44px;background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:18px;box-shadow:var(--shadow);padding:34px 36px;}
-  .lightrow .cimg{flex:0 0 220px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:1px solid var(--hairline);background:#0d0d0b;}
-  .lightrow .cimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;transform:scale(1.16) translateX(-3%);transform-origin:50% 50%;}
+  .lightrow .cimg{flex:0 0 280px;width:280px;height:280px;border-radius:50%;overflow:hidden;border:1px solid var(--hairline);background:#0d0d0b;}
+  .lightrow .cimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;}
   .lightrow .ccap{font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
   .lightrow p{font-size:15px;color:var(--ink-l);max-width:none;}
   .lightrow p:last-child{margin-bottom:0;}
 
-  /* layout drawings */
-  .layouts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;align-items:start;}
-  .layouts .imgcard{margin:0;max-width:none;}
-  .layouts .imgcard.wide{grid-column:1 / -1;}
+  /* two layout models side by side */
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;align-items:start;}
+  .pair .imgcard{margin:0;max-width:none;}
 
   @media (max-width:720px){
-    .gboard,.duo,.layouts{grid-template-columns:1fr;}
-    .gph.small{min-height:0;aspect-ratio:4/3;flex:none;}
+    .gboard,.duo,.pair{grid-template-columns:1fr;}
+    .ggrid{grid-template-rows:auto auto;}
+    .ggrid .gph{aspect-ratio:1/1;}
     .gwrite{padding:24px 20px;}
     .lightrow{flex-direction:column;text-align:center;padding:28px 20px;gap:22px;}
-    .lightrow .cimg{flex:0 0 200px;width:200px;height:200px;}
+    .lightrow .cimg{flex:0 0 240px;width:240px;height:240px;}
   }
 </style>
 </head>
@@ -419,7 +417,7 @@
     <div class="scrollhint">Scroll to explore</div>
   </div>
   <div class="hero-pic">
-    <img class="hero-mobile" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e5427b81a3502a8958dbf.jpg" alt="One of our barrel saunas with a porch, installed in a garden">
+    <img class="hero-mobile" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac78461c478ac5535453e58.png" alt="Stoke House, Linacre College, from above">
     <div class="hero-fade"></div>
   </div>
 </div>
@@ -429,12 +427,12 @@
   <div class="wrap reveal">
     <div class="kicker">Your brief</div>
     <h2>One corner, one <span>supplier</span></h2>
-    <p class="lede">The idea is to build a corner behind Stoke House that brings the sauna, showers and plunge pools together in a convenient, accessible and aesthetically pleasing way. Here is what your specification asked for.</p>
+    <p class="lede">The idea is to build a corner behind Stoke House that brings the sauna, showers and plunge pools together in a convenient, accessible and aesthetically pleasing way.</p>
     <div class="brief">
-      <div class="wblock"><div class="lb">The sauna</div><div class="hd">Globe window, not on a trailer</div><div class="bd">A barrel of around 5.5m by 2.3m with a panoramic globe rear window, an electric heater and an entrance room.</div></div>
-      <div class="wblock"><div class="lb">How many</div><div class="hd">Eight to twelve people</div><div class="bd">Shared use, so the sauna is sized for a group rather than a household.</div></div>
-      <div class="wblock"><div class="lb">Cold water</div><div class="hd">Plunge pools and an ice bath</div><div class="bd">One to two plunge barrels, plus an ice bath that can be cooled to around 4 degrees.</div></div>
-      <div class="wblock"><div class="lb">How it is bought</div><div class="hd">One whole package</div><div class="bd">Built and provided by the same company and priced together, so there is one supplier to deal with.</div></div>
+      <div class="wblock"><div class="lb">The sauna</div><div class="hd">6m globe sauna</div><div class="bd">Bespoke built, custom made 6 m x 2.3 m barrel sauna with our signature panoramic globe rear window, a top of the range electric heater, spacious 1m changing room and 1.6m porch entrance.</div></div>
+      <div class="wblock"><div class="lb">How many</div><div class="hd">Built for a group</div><div class="bd">Spacious enough for 8 - 12 lads at one time.</div></div>
+      <div class="wblock"><div class="lb">Hot and cold therapy</div><div class="hd">Three plunges, one of them runs hot too</div><div class="bd">Two single plunge baths and our signature Double Dipper, all three chilled to the 4 degrees in your brief for proper contrast therapy after the sauna. The Double Dipper can also be set to heat at 40&deg;C, hence the name.</div></div>
+      <div class="wblock"><div class="lb">How it is bought</div><div class="hd">One whole package</div><div class="bd">Built and provided by a local UK company and priced together as one.</div></div>
     </div>
   </div>
 </section>
@@ -447,17 +445,17 @@
     <p class="lede">Everything below is handcrafted to order in the same workshop, by the same team.</p>
     <div class="pstack">
       <div class="pbox">
-        <div class="ico"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac76d5d195f9172edeafe23.jpg" alt="6m globe sauna line drawing"></div>
+        <div class="ico globe"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac76d5d195f9172edeafe23.jpg" alt="6m globe sauna line drawing"></div>
         <div class="ti">6m globe sauna</div>
         <div class="bd">Full changing room, porch and large sauna capacity, with a panoramic globe window and a side placed WiFi heater.</div>
       </div>
       <div class="pbox">
-        <div class="ico"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cff484614db7528b9.png" alt="Double Dipper line drawing"></div>
+        <div class="ico dipper"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cff484614db7528b9.png" alt="Double Dipper line drawing"></div>
         <div class="ti">Double Dipper</div>
         <div class="bd">Hot tub and ice bath combo, all in one. Heats the water to 40&deg;C or chills it down to 3&deg;C.</div>
       </div>
       <div class="pbox">
-        <div class="ico"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db752909.png" alt="Single dipper line drawing"></div>
+        <div class="ico single"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db752909.png" alt="Single dipper line drawing"></div>
         <div class="ti">Two single dippers</div>
         <div class="bd">Compact cold plunge for one, perfect alongside any sauna.</div>
       </div>
@@ -473,27 +471,20 @@
     <p class="lede">Our Grand length, with a full changing room, porch and large sauna capacity, and a panoramic globe window across the back wall.</p>
 
     <div class="gboard">
-      <div class="gcol">
-        <div class="gph big">
-          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg" alt="A globe sauna in our workshop, looking through the globe window to the benches inside">
-          <div class="glab">In our workshop</div>
-        </div>
-        <div class="gwrite">
-          <h3>A window across the <span class="accent">whole back wall</span></h3>
-          <p>The globe window fills the back of the barrel, so the view runs right through the sauna from the benches. Tinted glass lets you see out while maintaining privacy from outside.</p>
-          <p>Inside, the seating faces the glass, with an interchangeable middle plank that drops in or out in seconds. For a fully private sauna the globe also comes in blackout glass.</p>
-        </div>
+      <div class="gph big">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg" alt="A globe sauna in our workshop, looking through the globe window to the benches inside">
       </div>
-      <div class="gcol">
-        <div class="gph small yard">
-          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7704b8c077584b4f4a4fb.jpg" alt="A finished globe sauna in our yard">
-          <div class="glab">Ready to leave the yard</div>
-        </div>
-        <div class="gph small">
-          <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7735c8c077584b4f4db29.jpg" alt="A globe sauna with blackout glass">
-          <div class="glab">Blackout glass</div>
-        </div>
+      <div class="ggrid">
+        <div class="gph yard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7704b8c077584b4f4a4fb.jpg" alt="A finished globe sauna in our yard"></div>
+        <div class="gph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7735c8c077584b4f4db29.jpg" alt="A globe sauna with blackout glass"></div>
+        <div class="gph group"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba81a5a495b2dbdabc915.jpg" alt="A group inside one of our saunas at night, seen through the globe window"></div>
+        <div class="gph dusk"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac791dc8c077584b4f6ef20.png" alt="Sitting in the globe window at dusk"></div>
       </div>
+    </div>
+    <div class="gwrite">
+      <h3>A window across the <span class="accent">whole back wall</span></h3>
+      <p>The globe window fills the back of the barrel, so the view runs right through the sauna from the benches. Tinted glass lets you see out while maintaining privacy from outside.</p>
+      <p>Inside, the seating faces the glass, with an interchangeable middle plank that drops in or out in seconds. For a fully private sauna the globe also comes in blackout glass.</p>
     </div>
 
     <div class="card-grid">
@@ -512,7 +503,7 @@
     <div class="forest-box">
       <div class="plab">On paper</div>
       <div class="size-box">
-        <div><div class="big">6m</div><div class="psub">long, changing room and porch included</div></div>
+        <div><div class="big">6m</div><div class="psub">long, with a 1m changing room and a 1.6m porch</div></div>
         <div><div class="big">2.3m</div><div class="psub">diameter, as in your specification</div></div>
         <div><div class="big">Grand</div><div class="psub">our largest standard length, built for groups</div></div>
       </div>
@@ -544,7 +535,7 @@
     <p class="note-line">Photographs of barrels we built for other customers. Your sauna is built to the specification above.</p>
 
     <div class="lightrow">
-      <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78548003343f290f712646.jpeg" alt="Warm under seat lighting glowing beneath the benches, seen through a globe window at night"></div>
+      <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78773688808720198d0c81.png" alt="Warm under seat LED lighting inside one of our saunas"></div>
       <div>
         <div class="ccap">Under seat lighting</div>
         <h3>Lit for evening <span class="accent">sessions</span></h3>
@@ -561,11 +552,19 @@
     <h2>The Double Dipper and two <span>single dippers</span></h2>
     <p class="lede">Contrast bathing between sauna and cold plunge for maximum benefit, built alongside your sauna to the same spec and finish.</p>
 
-    <div class="imgcard">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba10d4c13d4373c2d6c7b4.png" alt="One of our Double Dippers with the electric chiller and heater unit, outdoors">
-      <div class="cap">Double Dipper</div>
-      <div class="expl">The electric version: no wood required, clean and convenient.</div>
+    <div class="duo">
+      <div class="pcard">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac794ef195f9172ededf46d.jpg" alt="Our Double Dipper, studio photograph"></div>
+        <div class="cap">Double Dipper</div>
+        <div class="expl">Hot tub and ice bath in one, with the electric chiller and heater unit fitted.</div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7957fbbad531ac82edc4e.jpg" alt="Our single dipper cold plunge, studio photograph"></div>
+        <div class="cap">Single dipper</div>
+        <div class="expl">Compact cold plunge for one, with its own chiller and filter.</div>
+      </div>
     </div>
+    <p class="note-line">Studio photographs of our standard builds. Yours are built to order alongside your sauna.</p>
 
     <div class="card-grid">
       <div class="fcard feature"><div class="disc">&#10052;&#65039;</div><div><div class="t">Electric chiller and heater unit</div><div class="s">Heats the water to 40&deg;C or chills it down to 3&deg;C, a hot tub and ice bath combo, all in one. Switch between contrast therapy modes. 3kW cooling pump integrated, neatly fitted to the tub.</div></div></div>
@@ -577,17 +576,6 @@
       <div class="fcard"><div class="disc">&#128297;</div><div><div class="t">Stainless steel bands</div><div class="s">Natural wood construction to match your sauna</div></div></div>
     </div>
 
-    <div class="duo">
-      <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a78539888808720193dd452.png" alt="Inside one of our Double Dippers, with the seating"></div>
-        <div class="cap">Double Dipper inside</div>
-      </div>
-      <div class="pcard">
-        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa11249bfc1456f8c7ad890.jpg" alt="One of our single dipper cold plunges"></div>
-        <div class="cap">Single dipper</div>
-      </div>
-    </div>
-    <p class="note-line">Photographs of builds for other customers. Yours are built to order alongside your sauna.</p>
   </div>
 </section>
 
@@ -674,12 +662,12 @@
       <p>We are a family run business. We hand build in our workshop down in Wales, and our products are built to last a lifetime.</p>
     </div>
 
-    <div class="circrow">
+    <div class="circstack">
       <div class="circ big">
         <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffd1c641597c752ab184f.jpg" alt="Barrel Sauna UK stainless steel nameplate, built in the United Kingdom"></div>
         <div class="ccap">Built in the<br>United Kingdom</div>
       </div>
-      <div class="circ big">
+      <div class="circ big flip">
         <div class="cimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba74950f7669012e6e7d6.jpg" alt="Dark wood finish on one of our builds, close up"></div>
         <div class="ccap">Dark wood<br>finish</div>
       </div>
@@ -692,22 +680,41 @@
   <div class="wrap reveal">
     <div class="opt-chip">Your layout</div>
     <h2>How your sauna is <span>laid out</span></h2>
-    <p class="lede">The porch and changing room at the front, the sauna and globe window at the back.</p>
-    <div class="layouts">
-      <div class="imgcard wide">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Layout of the sauna showing the porch and changing room">
-        <div class="cap">Your layout</div>
-        <div class="expl">This layout shows the changing room and porch you have chosen.</div>
+    <p class="lede">Yours is a combination of the two layouts below: the 1.6m porch and 1m changing room from the first, and the U shaped seating around the globe window from the second.</p>
+    <div class="pair">
+      <div class="imgcard">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Layout model showing the porch and changing room">
+        <div class="cap">Porch and changing room</div>
+        <div class="expl">The 1.6m porch and the 1m changing room, with two doors between the outside and the sauna.</div>
       </div>
       <div class="imgcard">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="Layout showing the U shaped seating and the globe window">
+        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="Layout model showing the U shaped seating and the globe window">
         <div class="cap">Seating and globe</div>
-        <div class="expl">This layout shows the U shaped seating and the globe window.</div>
+        <div class="expl">U shaped benches around the panoramic globe window at the back.</div>
       </div>
-      <div class="imgcard">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba79b5a495b2dbdabbf1b.jpeg" alt="The porch on one of our barrel saunas">
-        <div class="cap">Porch example</div>
-        <div class="expl">The porch on one of our barrels, built for another customer.</div>
+    </div>
+    <p class="note-line">The models show a wood burning stove. Yours has the side placed Harvia electric heater.</p>
+  </div>
+</section>
+
+<!-- YOUR PORCH -->
+<section>
+  <div class="wrap reveal">
+    <div class="opt-chip">Your porch</div>
+    <h2>Your porch entrance, <span>three ways</span></h2>
+    <p class="lede">One decision is still open, and you may not have known there was one to make. The 1.6m porch comes three ways: open with no arm rests, an arm rest on one side, or arm rests both sides. Have a look, and let James know which you'd prefer when you next speak.</p>
+    <div class="trio">
+      <div class="pcard">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abba79b5a495b2dbdabbf1b.jpeg" alt="Porch with no arm rests"></div>
+        <div class="cap">No arm rests</div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a97d1f30ba3728cefcb6f9a.jpg" alt="Porch with an arm rest on one side"></div>
+        <div class="cap">One arm rest</div>
+      </div>
+      <div class="pcard">
+        <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac238ec195f9172ed5f32d5.jpg" alt="Porch with arm rests on both sides"></div>
+        <div class="cap">Arm rests both sides</div>
       </div>
     </div>
   </div>
@@ -844,16 +851,12 @@
               <p>For tricky access or premium designs, our team builds it right there in your space.</p>
             </div>
           </div>
+          <div class="dimg"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6abcab076c64b8e488a70c82.png" alt="One of our saunas on its way to a customer"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- INTERLUDE -->
-<div class="breather">
-  <p>Welsh family business. Handmade and made to order. <span>Designed around you.</span> Built to last.</p>
-</div>
 
 <!-- WHERE YOU ARE NOW, THE ESTIMATE AND THE DEPOSIT -->
 <section class="deposit" id="deposit">
