@@ -36,11 +36,11 @@
     background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac78461c478ac5535453e58.png') center 42%/cover no-repeat;
     display:flex; align-items:flex-end;
   }
-  .hero .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(22,38,28,0.36) 0%, rgba(22,38,28,0.16) 40%, rgba(22,38,28,0.88) 100%);}
+  .hero .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(22,38,28,0.55) 0%, rgba(22,38,28,0.50) 35%, rgba(22,38,28,0.72) 65%, rgba(22,38,28,0.94) 100%);}
   .hero-inner{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto;padding:0 24px 88px;text-align:center;}
   .hero .dash{width:44px;height:2px;background:var(--honey-l);margin:0 auto 16px;}
   .hero .kicker{color:var(--honey-l);}
-  .hero h1{font-size:clamp(40px,7vw,78px);font-weight:700;line-height:1.04;letter-spacing:-1.5px;color:#ffffff;max-width:860px;margin:0 auto 22px;}
+  .hero h1{font-size:clamp(40px,7vw,78px);font-weight:700;line-height:1.04;letter-spacing:-1.5px;color:#ffffff;max-width:860px;margin:0 auto 22px;text-shadow:0 2px 24px rgba(22,38,28,0.45);}
   .hero h1 span{color:var(--honey-l);}
   .hero p.sub{font-size:18px;color:var(--veil-body);max-width:600px;margin:0 auto 34px;}
   .btn{display:inline-block;background:var(--honey);color:#ffffff;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 40px;border-radius:30px;text-decoration:none;}
@@ -66,12 +66,14 @@
   .tight-bottom{padding-bottom:36px;}
   .tight-top{padding-top:36px;}
 
-  /* brief cards, white on white block variant */
-  .brief{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
-  .wblock{background:#ffffff;border-radius:18px;box-shadow:var(--shadow);padding:26px 24px;}
-  .wblock .lb{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
-  .wblock .hd{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3;}
-  .wblock .bd{font-size:14px;color:var(--ink-l);}
+  /* the brief as a ledger: one lift card, numbered rows */
+  .ledger{background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:22px;box-shadow:var(--shadow);margin-top:34px;overflow:hidden;}
+  .lrow{display:grid;grid-template-columns:120px 190px 1fr;gap:28px;align-items:start;padding:34px 40px;border-top:1px solid rgba(65,124,81,0.14);}
+  .lrow:first-child{border-top:0;}
+  .lrow .num{font-size:56px;font-weight:700;line-height:0.9;color:var(--honey);letter-spacing:-2px;}
+  .lrow .lab{font-size:11px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--sage);padding-top:8px;line-height:1.6;}
+  .lrow .hd{font-size:22px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:8px;}
+  .lrow .bd{font-size:15px;color:var(--ink-l);max-width:560px;}
 
   /* option chip and spec cards */
   .opt-chip{display:inline-block;background:var(--honey);color:#ffffff;font-size:12px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;padding:9px 22px;border-radius:24px;margin-bottom:16px;}
@@ -302,7 +304,6 @@
   @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
 
   @media (max-width:860px){
-    .brief{grid-template-columns:1fr 1fr;}
     .qa{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:720px){
@@ -314,7 +315,10 @@
     .hero-inner{padding:0 24px 48px;margin-top:-64px;}
     .hero h1{font-size:clamp(34px,9vw,44px);}
     .hero p.sub{font-size:16px;}
-    .badges,.reels,.reviews .rgrid2,.grid,.delivery,.card-grid,.est-grid,.size-box,.brief,.qa,.trio{grid-template-columns:1fr;}
+    .badges,.reels,.reviews .rgrid2,.grid,.delivery,.card-grid,.est-grid,.size-box,.qa,.trio{grid-template-columns:1fr;}
+    .lrow{grid-template-columns:1fr;gap:10px;padding:26px 22px;}
+    .lrow .num{font-size:44px;}
+    .lrow .lab{padding-top:0;}
     .hero-inner{padding-bottom:64px;}
     .hero h1{letter-spacing:-0.5px;}
     section{padding:60px 0;}
@@ -430,11 +434,27 @@
     <div class="kicker">Your brief</div>
     <h2>One corner, one <span>supplier</span></h2>
     <p class="lede">The idea is to build a corner behind Stoke House that brings the sauna, showers and plunge pools together in a convenient, accessible and aesthetically pleasing way.</p>
-    <div class="brief">
-      <div class="wblock"><div class="lb">The sauna</div><div class="hd">6m globe sauna</div><div class="bd">Bespoke built, custom made 6 m x 2.3 m barrel sauna with our signature panoramic globe rear window, a top of the range electric heater, spacious 1m changing room and 1.6m porch entrance.</div></div>
-      <div class="wblock"><div class="lb">How many</div><div class="hd">Built for a group</div><div class="bd">Spacious enough for 8 - 12 lads at one time.</div></div>
-      <div class="wblock"><div class="lb">Hot and cold therapy</div><div class="hd">Three plunges, one of them runs hot too</div><div class="bd">Two single plunge baths and our signature Double Dipper, all three chilled to the 4 degrees in your brief for proper contrast therapy after the sauna. The Double Dipper can also be set to heat at 40&deg;C, hence the name.</div></div>
-      <div class="wblock"><div class="lb">How it is bought</div><div class="hd">One whole package</div><div class="bd">Built and provided by a local UK company and priced together as one.</div></div>
+    <div class="ledger">
+      <div class="lrow">
+        <div class="num">01</div>
+        <div class="lab">The sauna</div>
+        <div><div class="hd">6m globe sauna</div><div class="bd">Bespoke built, custom made 6 m x 2.3 m barrel sauna with our signature panoramic globe rear window, a top of the range electric heater, spacious 1m changing room and 1.6m porch entrance.</div></div>
+      </div>
+      <div class="lrow">
+        <div class="num">02</div>
+        <div class="lab">How many</div>
+        <div><div class="hd">Built for a group</div><div class="bd">Spacious enough for 8 - 12 lads at one time.</div></div>
+      </div>
+      <div class="lrow">
+        <div class="num">03</div>
+        <div class="lab">Hot and cold therapy</div>
+        <div><div class="hd">Three plunges, one of them runs hot too</div><div class="bd">Two single plunge baths and our signature Double Dipper, all three chilled to the 4 degrees in your brief for proper contrast therapy after the sauna. The Double Dipper can also be set to heat at 40&deg;C, hence the name.</div></div>
+      </div>
+      <div class="lrow">
+        <div class="num">04</div>
+        <div class="lab">How it is bought</div>
+        <div><div class="hd">One whole package</div><div class="bd">Built and provided by a local UK company and priced together as one.</div></div>
+      </div>
     </div>
   </div>
 </section>
