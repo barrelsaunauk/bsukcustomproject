@@ -223,15 +223,16 @@
   .visitcard p{margin:0;font-size:14px;max-width:none;}
 
   /* how your build arrives */
-  .delivery{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start;margin-top:30px;}
+  .delivery{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:stretch;margin-top:30px;}
+  .dlist{display:flex;flex-direction:column;}
   .dlist .row{display:flex;align-items:flex-start;gap:18px;margin-bottom:26px;}
   .dlist .row:last-child{margin-bottom:0;}
   .dlist .circle{width:48px;height:48px;background:#3F6A4C;font-size:21px;}
   .dlist .circle.gold{background:var(--honey);}
   .dlist h4{margin:0 0 2px 0;font-size:15px;color:#ffffff;}
   .dlist p{margin:0;font-size:14px;}
-  .dlist .dimg{margin-top:26px;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(22,38,28,0.35);}
-  .dlist .dimg img{display:block;width:100%;height:auto;}
+  .dlist .dimg{position:relative;flex:1 1 auto;min-height:240px;margin-top:26px;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(22,38,28,0.35);}
+  .dlist .dimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;}
 
   /* range and tiles */
   .kicker.center,h2.center{text-align:center;}
@@ -325,6 +326,7 @@
     .fcard.feature .t{font-size:20px;}
     .band.visit{height:clamp(360px,54vh,480px);}
     .delivery .videoposter{max-width:280px;margin:0 auto;}
+    .dlist .dimg{flex:none;min-height:0;aspect-ratio:4/3;}
     .rangepill{border-radius:36px;padding:30px 12px 24px;}
     .rgrid{grid-template-columns:1fr 1fr 1fr 1.4fr;row-gap:26px;column-gap:6px;}
     .rd{height:66px;}
@@ -556,7 +558,7 @@
       <div class="pcard">
         <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac794ef195f9172ededf46d.jpg" alt="Our Double Dipper, studio photograph"></div>
         <div class="cap">Double Dipper</div>
-        <div class="expl">Hot tub and ice bath in one, with the electric chiller and heater unit fitted.</div>
+        <div class="expl">Hot tub and ice bath in one, shown with its insulated thermo lid, included as standard.</div>
       </div>
       <div class="pcard">
         <div class="ph"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac7957fbbad531ac82edc4e.jpg" alt="Our single dipper cold plunge, studio photograph"></div>
@@ -693,7 +695,7 @@
         <div class="expl">U shaped benches around the panoramic globe window at the back.</div>
       </div>
     </div>
-    <p class="note-line">The models show a wood burning stove. Yours has the side placed Harvia electric heater.</p>
+    <p class="note-line">The second model is shown with a wood burning stove. Yours has the side placed Harvia electric heater, as in the first.</p>
   </div>
 </section>
 
