@@ -59,7 +59,7 @@
   .chip{display:inline-block;background:#fff;color:var(--fdeep);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px;}
 
   /* hero: dark veil over the top quarter only, bottom fully clear */
-  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;text-align:center;}
+  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-start;text-align:center;}
   .hero .veil{background:linear-gradient(180deg,rgba(22,38,28,.86) 0%,rgba(22,38,28,.62) 14%,rgba(22,38,28,.22) 28%,rgba(22,38,28,0) 40%);}
   .hero .top{padding:40px 24px 0;}
   .hero h1{font-size:clamp(40px,7.4vw,84px);color:#fff;max-width:900px;margin:0 auto 14px;text-shadow:0 2px 22px rgba(22,38,28,.5);}
@@ -102,10 +102,11 @@
   .vrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:44px;align-items:center;}
 
   /* shower mood band, centre left clear so the rainfall shows */
-  .shband{aspect-ratio:1376/768;min-height:480px;display:flex;align-items:center;}
-  .shband>img.bg{object-position:center top;}
-  .shband .veil{background:linear-gradient(90deg,rgba(22,38,28,.94) 0%,rgba(22,38,28,.82) 26%,rgba(22,38,28,.25) 48%,rgba(22,38,28,.08) 70%,rgba(22,38,28,.25) 100%);}
-  .shband .copy{max-width:380px;}
+  .shband{height:460px;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .shband>img.bg{object-position:50% 22%;}
+  .shband .veil{background:radial-gradient(ellipse 38% 70% at 50% 30%,rgba(22,38,28,.5) 0%,rgba(22,38,28,.82) 60%,rgba(22,38,28,.93) 100%);}
+  .shband .copy{max-width:640px;margin:0 auto;}
+  .shband .copy .lede{margin:0 auto;}
   .icebig{position:relative;margin-top:26px;}
   .bigcard{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:stretch;}
   .bigcard>img{width:100%;height:auto;}
@@ -151,11 +152,10 @@
     section{padding:60px 0;}
     .g2,.g3{grid-template-columns:minmax(0,1fr);}
     .cards>.lift{flex-basis:100%;}
-    .hero{min-height:0;background:var(--ground);}
-    .hero>img.bg{position:static;order:2;height:auto;aspect-ratio:1376/768;}
-    .hero .veil{display:none;}
-    .hero .top{order:1;padding:36px 20px 24px;}
-    .hero .bot{order:3;padding:24px 20px 32px;}
+    .hero{min-height:780px;}
+    .hero>img.bg{object-position:82% 50%!important;}
+    .hero .veil{background:linear-gradient(180deg,rgba(22,38,28,.9) 0%,rgba(22,38,28,.72) 30%,rgba(22,38,28,.25) 55%,rgba(22,38,28,0) 75%);}
+    .hero .top{padding:40px 20px 0;}
     .hero h1{font-size:38px;}
     .fpdraw{width:64px!important;}
     .pbox{border-radius:22px;padding:16px 18px;}
@@ -168,14 +168,9 @@
     .jrow{flex-direction:column;}
     .jrow>*{flex:none!important;width:100%;}
     .vrow{grid-template-columns:minmax(0,1fr);gap:28px;}
-    .shband{min-height:0;display:block;aspect-ratio:auto;}
-    .shband>img.bg{position:static;height:auto;aspect-ratio:1376/768;}
-    .shband .veil{display:none;}
-    .shband .onph{background:var(--ground);padding-top:40px!important;padding-bottom:48px!important;}
-    .shband .copy{max-width:none;}
+    .shband{height:auto;min-height:460px;}
     .bigcard{grid-template-columns:minmax(0,1fr);}
-    .icecirc{position:static;display:block;margin:0 auto 18px;width:150px;height:150px;}
-    .icebig{display:flex;flex-direction:column-reverse;}
+    .icecirc{top:-26px;right:-10px;bottom:auto;width:112px;height:112px;border-width:3px;}
     .circsm{width:120px;height:120px;flex-basis:120px;}
   }
 </style>
@@ -191,13 +186,12 @@
     <h1>Your bespoke <span>mobile</span> wellness set-up</h1>
     <p class="sub">Our signature 5.5m globe sauna, with a 1.5m changing room built into that length, and a brand new triple cold plunge station. Both mobile. Both handbuilt to order in Wales.</p>
   </div>
-  <div class="onph bot"><a class="pill" href="#estimate">See your estimate</a></div>
 </header>
 
 <!-- 2 YOUR BRIEF -->
 <section>
   <div class="w">
-    <p class="k">What you asked for</p>
+    <p class="k">From your showroom visit</p>
     <h2>Your <span>brief</span></h2>
     <p class="lede">A hot and cold therapy set-up. Two trailers, one builder.</p>
     <div class="cards">
@@ -220,7 +214,7 @@
       <p class="lede">Your 5.5m globe sauna on its own trailer, and a look inside at how the space is laid out.</p>
     </div>
     <div class="lab" style="margin-top:30px"><div class="shot1"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe77bbad531ac88ff216.jpg" alt="The 5.5m globe sauna on its twin axle trailer, studio shot"></div><div class="tag">5.5m overall, including the 1.5m changing room</div></div>
-    <div class="lab" style="margin-top:28px"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/13fe4dfa-65d4-4f8f-829d-727cc50b5de8.jpg" alt="Cutaway of the globe sauna showing the changing room, glass door, wood burner set into the bench line, U-shaped benches and the globe window"><div class="tag">Inside your globe</div><div class="txt2">Flush entrance with keypad, changing room with facing benches, glass door through to the hot room, wood burner set into the bench line in the corner, and U-shaped benches running round to the globe. Your exact layout is finalised on your spec call.</div></div>
+    <div class="lab" style="margin-top:28px"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acce57b883b04e61909ff07.jpg" alt="Cutaway of the globe sauna on its decked trailer showing the changing room, glass door, wood burner and benches running to the globe window"><div class="tag">Inside your globe</div><div class="txt2">Flush entrance with a keypad door code, a changing room with cool blue lighting, a glass door through to the hot room, the wood burner with its own chimney, and benches running all the way to the globe window. Your exact layout is finalised on your spec call.</div></div>
   </div>
 </section>
 
@@ -245,7 +239,7 @@
 <section class="dark">
   <div class="w" style="max-width:1180px">
     <div style="max-width:932px;margin:0 auto">
-      <p class="k">Inside and out</p>
+      <p class="k">From our recent builds</p>
       <h2>Every <span>detail</span></h2>
     </div>
     <p class="gsub">Outside and on the road</p>
@@ -294,24 +288,24 @@
     <h2>The ice bath <span>station</span></h2>
     <p class="lede" style="margin-bottom:30px">Three ways to lay out your ice baths. Every layout comes with a chiller and filter unit, and lights inside every tub.</p>
     <div class="jrow">
-      <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe4e4770fb500bf1a5df.jpg" alt="Option 2, three ice baths set into a raised deck"><div class="tag">Option 2</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Built in ice bath deck</span><ul class="tick"><li>Three ice baths set into a raised timber box</li><li>Only the rims show above the top</li><li>One short flight of steps up to the baths</li></ul></div></div>
-      <div class="lab" style="flex:1.79 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/752f1a25-cb32-45fc-910b-6a5f5ee70edb.jpg" alt="Option 3, a modern black framed ice bath station beside a lake"><div class="tag">Option 3</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Modern black frame station</span><ul class="tick"><li>Slim black steel frame with timber slat screens</li><li>Solar panels across the whole roof</li><li>Three single tubs, each with its own step</li></ul></div></div>
+      <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe4e4770fb500bf1a5df.jpg" alt="Option 1, three ice baths set into a raised deck"><div class="tag">Option 1</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Built in ice bath deck</span><ul class="tick"><li>Three ice baths set into a raised timber box</li><li>Only the rims show above the top</li><li>One short flight of steps up to the baths</li></ul></div></div>
+      <div class="lab" style="flex:1.79 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/752f1a25-cb32-45fc-910b-6a5f5ee70edb.jpg" alt="Option 2, a modern black framed ice bath station beside a lake"><div class="tag">Option 2</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Modern black frame station</span><ul class="tick"><li>Slim black steel frame with timber slat screens</li><li>Solar panels across the whole roof</li><li>Three single tubs, each with its own step</li></ul></div></div>
     </div>
     <div class="icebig">
-      <div class="lab bigcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe37bd6bb710ca4ba315.jpg" alt="Option 1, three barrel ice baths on the deck"><div><div class="tag">Option 1</div><div style="padding:22px 24px 26px"><span class="bh" style="font-size:22px;color:var(--fdeep)">Three standing ice baths</span><ul class="tick"><li>Three single person barrel ice baths</li><li>Each with its own timber step</li><li>Open decking around every bath</li></ul></div></div></div>
+      <div class="lab bigcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe37bd6bb710ca4ba315.jpg" alt="Option 3, three barrel ice baths on the deck"><div><div class="tag">Option 3</div><div style="padding:22px 24px 26px"><span class="bh" style="font-size:22px;color:var(--fdeep)">Three standing ice baths</span><ul class="tick"><li>Three single person barrel ice baths</li><li>Each with its own timber step</li><li>Open decking around every bath</li></ul></div></div></div>
       <img class="icecirc" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/f673183f-6a11-4d33-bd0a-300a113d570e.jpg" alt="A hand touching the still water of an ice bath">
     </div>
   </div>
 </section>
 
-<!-- 7 BUILT FOR THE ROAD -->
+<!-- 7 ICE BATH ESSENTIALS -->
 <section style="padding-top:10px">
   <div class="w">
-    <p class="k">On every layout</p>
-    <h2 style="margin-bottom:26px">Built for the <span>road</span></h2>
+    <p class="k">Ice bath essentials</p>
+    <h2 style="margin-bottom:26px">Included in every <span>option</span></h2>
     <div style="display:flex;flex-direction:column;gap:16px">
       <div class="pbox"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db752909.png" alt=""><div><span class="bh">Single plunge ice baths</span>Three ice baths, one person each, so a group can plunge side by side.</div></div>
-      <div class="pbox"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acc993ebd6bb710ca6061e6.jpg" alt=""><div><span class="bh">Our own trailer</span>A galvanised steel trailer, custom built by us and certified for UK roads, with a twin axle tucked under the raised deck.</div></div>
+      <div class="pbox"><div class="disc" style="flex:0 0 90px;width:90px;height:90px;font-size:40px;margin:0 10px">❄️</div><div><span class="bh">Chiller, filter and tub lights</span>The water stays cold and clean, with a soft light glowing inside every tub.</div></div>
     </div>
   </div>
 </section>
@@ -330,22 +324,24 @@
   </div>
 </div>
 <section style="padding-bottom:20px">
-  <div class="w g2" style="align-items:center">
-    <div>
-      <p class="k">Built to suit</p>
-      <h2>Your shower, <span>your way</span></h2>
-      <p class="lede">We can fit a shower onto the trailer itself, as in this example, or build one of our classic barrel showers to stand beside it. We will settle the details with you on your spec call.</p>
+  <div class="w">
+    <p class="k">Built to suit</p>
+    <h2>Your shower, <span>your way</span></h2>
+    <p class="lede" style="margin-bottom:28px">We can fit a shower onto the trailer itself, or build one of our classic barrel showers to stand beside it.</p>
+    <div class="jrow">
+      <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acca0844770fb500b073d3d.jpg" alt="A modern timber shower built onto the trailer beside a globe sauna"><div class="tag">Built onto the trailer</div></div>
+      <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6accfa743c666179ba6b17f0.png" alt="A classic round barrel shower beside a globe sauna by a lake at night"><div class="tag">Classic barrel shower</div></div>
     </div>
-    <div class="lab"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acca0844770fb500b073d3d.jpg" alt="A timber outdoor shower on the trailer beside a globe sauna"><div class="tag">One example of the custom showers we can build</div></div>
+    <p class="lede" style="margin-top:24px">Two examples of what we can build. Tell us what you have in mind and we will build it to suit.</p>
   </div>
 </section>
 
 <!-- 9 OUR TRAILERS -->
 <section>
   <div class="w">
-    <p class="k">Our own trailers</p>
+    <p class="k">Galvanised, decked and road ready</p>
     <h2>Built on <span>our trailers</span></h2>
-    <p class="lede" style="margin-bottom:28px">Both units ride on trailers we deck and fit out ourselves.</p>
+    <p class="lede" style="margin-bottom:28px">Both units ride on galvanised steel trailers, custom built by us, with a twin axle tucked under the raised deck. We deck and fit out every one ourselves.</p>
     <div class="jrow">
       <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1cc6f7d735ea2a10c07da.jpg" alt="Timber decking on the trailer"><div class="tag">Premium hardwearing decking</div></div>
       <div class="lab" style="flex:2 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a0a1df2d01555339a3c4.jpg" alt="Twin axle trailers"><div class="tag">Galvanised twin axle chassis</div></div>
@@ -361,8 +357,7 @@
     <div>
       <p class="k">On the road</p>
       <h2>Ready to <span>roll</span></h2>
-      <p class="lede" style="margin-bottom:26px">See one arrive. This is one of our compact mobile saunas, shown so you can picture yours pulling up.</p>
-      <div class="row"><img class="circsm" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/2ff04ef9-642d-40c1-be4d-75ff16bd4b25.jpg" alt="An ice bath under the night sky with a mobile sauna behind"><p class="cap">Wherever you pitch up</p></div>
+      <p class="lede">See one arrive. This is one of our compact mobile saunas, shown so you can picture yours pulling up.</p>
     </div>
   </div>
 </section>
@@ -394,9 +389,9 @@
     </div>
     <div class="lift" style="border-top:4px solid var(--honey)">
       <div class="money"><span>Mobile globe sauna with changing room</span><span>£TBC + VAT</span></div>
-      <div class="money"><span>Mobile ice bath station, Option 1</span><span>£TBC + VAT</span></div>
-      <div class="money"><span>Mobile ice bath station, Option 2</span><span>£TBC + VAT</span></div>
-      <div class="money"><span>Mobile ice bath station, Option 3</span><span>£TBC + VAT</span></div>
+      <div class="money"><span>Mobile ice bath station, Option 1, built in deck</span><span>£TBC + VAT</span></div>
+      <div class="money"><span>Mobile ice bath station, Option 2, black frame</span><span>£TBC + VAT</span></div>
+      <div class="money"><span>Mobile ice bath station, Option 3, standing baths</span><span>£TBC + VAT</span></div>
       <div class="money"><span>Outdoor shower, optional add-on</span><span>£TBC + VAT</span></div>
       <div class="money total"><span><span class="bh">Your estimate</span></span><span>£TBC + VAT</span></div>
     </div>
