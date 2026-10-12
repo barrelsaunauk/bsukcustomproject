@@ -59,11 +59,12 @@
   .chip{display:inline-block;background:#fff;color:var(--fdeep);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px;}
 
   /* hero: dark veil over the top quarter only, bottom fully clear */
-  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-start;text-align:center;}
-  .hero .veil{background:linear-gradient(180deg,rgba(22,38,28,.86) 0%,rgba(22,38,28,.62) 14%,rgba(22,38,28,.22) 28%,rgba(22,38,28,0) 40%);}
-  .hero .top{padding:40px 24px 0;}
-  .hero h1{font-size:clamp(40px,7.4vw,84px);color:#fff;max-width:900px;margin:0 auto 14px;text-shadow:0 2px 22px rgba(22,38,28,.5);}
-  .hero .sub{font-size:17px;color:#eef3ec;max-width:640px;margin:0 auto;text-shadow:0 1px 14px rgba(22,38,28,.6);}
+  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:left;}
+  .hero>img.bg{object-position:60% 50%;}
+  .hero .veil{background:linear-gradient(90deg,rgba(22,38,28,.88) 0%,rgba(22,38,28,.7) 32%,rgba(22,38,28,.25) 55%,rgba(22,38,28,0) 70%);}
+  .hero .top{padding:60px 24px;width:100%;max-width:1180px;margin:0 auto;}
+  .hero h1{font-size:clamp(40px,5.4vw,72px);color:#fff;max-width:600px;margin:0 0 16px;text-shadow:0 2px 22px rgba(22,38,28,.5);}
+  .hero .sub{font-size:17px;color:#eef3ec;max-width:500px;margin:0;text-shadow:0 1px 14px rgba(22,38,28,.6);}
   .hero .bot{padding:0 24px 44px;}
   .hero .pill{box-shadow:0 12px 28px rgba(22,38,28,.35);}
 
@@ -156,9 +157,9 @@
     section{padding:60px 0;}
     .g2,.g3{grid-template-columns:minmax(0,1fr);}
     .cards>.lift{flex-basis:100%;}
-    .hero{min-height:720px;}
-    .hero>img.bg{object-position:56% 60%!important;}
-    .hero .veil{background:linear-gradient(180deg,rgba(22,38,28,.9) 0%,rgba(22,38,28,.72) 30%,rgba(22,38,28,.25) 55%,rgba(22,38,28,0) 75%);}
+    .hero{min-height:720px;justify-content:flex-start;background:#16261C;}
+    .hero>img.bg{inset:auto!important;left:-80vw!important;bottom:0!important;width:200vw!important;max-width:none!important;height:auto!important;object-fit:fill!important;}
+    .hero .veil{background:linear-gradient(180deg,#16261C 0%,#16261C 40%,rgba(22,38,28,.55) 50%,rgba(22,38,28,0) 62%);}
     .hero .top{padding:40px 20px 0;}
     .hero h1{font-size:38px;}
     .fpdraw{width:64px!important;}
@@ -183,7 +184,7 @@
 
 <!-- 1 HERO -->
 <header class="ph hero">
-  <img class="bg" src="assets/grant_whittle/gw_hero_globe_only.jpg" alt="The globe sauna on its trailer in a misty field" style="object-position:center 40%">
+  <img class="bg" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acd390141cfb3bf92b549b3.jpg" alt="The globe sauna on its trailer beside a mountain lake at sunset">
   <div class="veil"></div>
   <div class="onph top">
     <p class="k">Prepared for Grant Whittle and Gareth Evans</p>
@@ -262,7 +263,7 @@
     </div>
     <p class="gsub">The sauna</p>
     <div class="blk">
-      <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acd05efed5644a05fd6935f.png" alt="Looking out through the globe window from the sauna benches"><figcaption class="tag">The view from the bench</figcaption></figure>
+      <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e1094b2a8a6f1500359f9.jpg" alt="Looking along the sauna benches and out through the globe window"><figcaption class="tag">The view from the bench</figcaption></figure>
       <div class="stack">
         <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbd524bbad531ac892342d.jpg" alt="Heaters on"><figcaption class="tag">Heaters on</figcaption></figure>
         <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe74195f9172ed4eb267.png" alt="Cooling off in the changing room"><figcaption class="tag">Cooling off in the changing room</figcaption></figure>
