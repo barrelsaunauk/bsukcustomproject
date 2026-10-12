@@ -107,10 +107,14 @@
   .shband .veil{background:radial-gradient(ellipse 38% 70% at 50% 30%,rgba(22,38,28,.5) 0%,rgba(22,38,28,.82) 60%,rgba(22,38,28,.93) 100%);}
   .shband .copy{max-width:640px;margin:0 auto;}
   .shband .copy .lede{margin:0 auto;}
-  .icebig{position:relative;margin-top:26px;}
   .bigcard{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:stretch;}
   .bigcard>img{width:100%;height:auto;}
-  .icecirc{position:absolute;right:26px;bottom:22px;width:176px;height:176px;border-radius:50%;object-fit:cover;object-position:45% 60%;border:4px solid var(--honey);box-shadow:0 14px 34px rgba(22,38,28,.3);z-index:3;}
+  .bigcard.rev>img{order:2;}
+  .bigcard.rev{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);}
+  .midrow{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1fr);gap:24px;margin:26px 0;align-items:center;}
+  .smallcard{display:block;}
+  .smallcard>img{width:100%;height:auto;}
+  .mixcard{display:flex;gap:16px;align-items:flex-start;border-top:4px solid var(--honey);font-size:15px;color:var(--inkl);}
   .circsm{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--honey);box-shadow:var(--shadow);flex:0 0 150px;}
   .foot .logo{width:150px;margin:0 auto 6px;}
 
@@ -169,9 +173,9 @@
     .jrow>*{flex:none!important;width:100%;}
     .vrow{grid-template-columns:minmax(0,1fr);gap:28px;}
     .shband{height:auto;min-height:460px;}
-    .bigcard{grid-template-columns:minmax(0,1fr);}
-    .icecirc{top:-26px;right:-10px;bottom:auto;width:112px;height:112px;border-width:3px;}
-    .circsm{width:120px;height:120px;flex-basis:120px;}
+    .bigcard,.bigcard.rev,.midrow,.smallcard{grid-template-columns:minmax(0,1fr);}
+    .bigcard.rev>img{order:0;}
+      .circsm{width:120px;height:120px;flex-basis:120px;}
   }
 </style>
 </head>
@@ -214,7 +218,7 @@
       <p class="lede">Your 5.5m globe sauna on its own trailer, and a look inside at how the space is laid out.</p>
     </div>
     <div class="lab" style="margin-top:30px"><div class="shot1"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe77bbad531ac88ff216.jpg" alt="The 5.5m globe sauna on its twin axle trailer, studio shot"></div><div class="tag">5.5m overall, including the 1.5m changing room</div></div>
-    <div class="lab" style="margin-top:28px"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acce57b883b04e61909ff07.jpg" alt="Cutaway of the globe sauna on its decked trailer showing the changing room, glass door, wood burner and benches running to the globe window"><div class="tag">Inside your globe</div><div class="txt2">Flush entrance with a keypad door code, a changing room with cool blue lighting, a glass door through to the hot room, the wood burner with its own chimney, and benches running all the way to the globe window. Your exact layout is finalised on your spec call.</div></div>
+    <div class="lab" style="margin-top:28px"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acce57b883b04e61909ff07.jpg" alt="Cutaway of the globe sauna on its decked trailer showing the changing room, glass door, wood burner and benches running to the globe window"><div class="tag">Inside your globe</div><div class="txt2">Flush entrance with a keypad door code, a changing room with cool blue lighting, a glass door through to the sauna, the wood burner with its own chimney, and benches running all the way to the globe window. Your exact layout is finalised on your spec call.</div></div>
   </div>
 </section>
 
@@ -243,13 +247,11 @@
       <h2>Every <span>detail</span></h2>
     </div>
     <p class="gsub">Outside and on the road</p>
-    <div class="blk">
-      <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe6d195f9172ed4eb207.png" alt="A globe sauna on its decked trailer on a lawn"><figcaption class="tag">Mobile globe on its decked trailer</figcaption></figure>
-      <div class="stack">
-        <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe744770fb500bf1a9af.jpg" alt="Building the changing room wall"><figcaption class="tag">Installation day</figcaption></figure>
-        <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe6dbd6bb710ca4ba76a.jpg" alt="The flush entrance door"><figcaption class="tag">Flush entrance</figcaption></figure>
-      </div>
+    <div class="jrow">
+      <figure class="gfig" style="flex:1.33 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe6d195f9172ed4eb207.png" alt="A globe sauna on its decked trailer on a lawn"><figcaption class="tag">Mobile globe on its decked trailer</figcaption></figure>
+      <figure class="gfig" style="flex:0.76 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aca2091bd6bb710ca290094.jpg" alt="The flush entrance door on a barrel sauna"><figcaption class="tag">Flush entrance</figcaption></figure>
     </div>
+    <figure class="gfig" style="margin-top:24px"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9cb028e29b3baf97db9dbc.png" alt="A globe sauna being assembled on installation day"><figcaption class="tag">Installation day</figcaption></figure>
     <p class="gsub">The changing room</p>
     <div class="blk rev">
       <div class="stack">
@@ -258,9 +260,9 @@
       </div>
       <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe71c478ac5535a74b77.jpg" alt="U-shaped floating bench, side heater"><figcaption class="tag">U-shaped floating bench, side heater</figcaption></figure>
     </div>
-    <p class="gsub">The hot room</p>
+    <p class="gsub">The sauna</p>
     <div class="blk">
-      <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/3561b2a6-5dc4-48cc-8038-f5cf40d44234.jpg" alt="Looking out through the globe from the floating bench"><figcaption class="tag">The view from the bench</figcaption></figure>
+      <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acd05efed5644a05fd6935f.png" alt="Looking out through the globe window from the sauna benches"><figcaption class="tag">The view from the bench</figcaption></figure>
       <div class="stack">
         <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbd524bbad531ac892342d.jpg" alt="Heaters on"><figcaption class="tag">Heaters on</figcaption></figure>
         <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe74195f9172ed4eb267.png" alt="Cooling off in the changing room"><figcaption class="tag">Cooling off in the changing room</figcaption></figure>
@@ -287,14 +289,12 @@
     <p class="k">Trailer two</p>
     <h2>The ice bath <span>station</span></h2>
     <p class="lede" style="margin-bottom:30px">Three ways to lay out your ice baths. Every layout comes with a chiller and filter unit, and lights inside every tub.</p>
-    <div class="jrow">
-      <div class="lab" style="flex:1 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe4e4770fb500bf1a5df.jpg" alt="Option 1, three ice baths set into a raised deck"><div class="tag">Option 1</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Built in ice bath deck</span><ul class="tick"><li>Three ice baths set into a raised timber box</li><li>Only the rims show above the top</li><li>One short flight of steps up to the baths</li></ul></div></div>
-      <div class="lab" style="flex:1.79 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/752f1a25-cb32-45fc-910b-6a5f5ee70edb.jpg" alt="Option 2, a modern black framed ice bath station beside a lake"><div class="tag">Option 2</div><div style="padding:20px 22px 24px"><span class="bh" style="font-size:20px;color:var(--fdeep)">Modern black frame station</span><ul class="tick"><li>Slim black steel frame with timber slat screens</li><li>Solar panels across the whole roof</li><li>Three single tubs, each with its own step</li></ul></div></div>
+    <div class="lab bigcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe4e4770fb500bf1a5df.jpg" alt="Option 1, three ice baths set into a raised deck"><div><div class="tag">Option 1</div><div style="padding:22px 24px 26px"><span class="bh" style="font-size:22px;color:var(--fdeep)">Built in ice bath deck</span><ul class="tick"><li>Three ice baths set into a raised timber box</li><li>Only the rims show above the top</li><li>One short flight of steps up to the baths</li></ul></div></div></div>
+    <div class="midrow">
+      <div class="lab smallcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/752f1a25-cb32-45fc-910b-6a5f5ee70edb.jpg" alt="Option 2, a modern black framed ice bath station beside a lake"><div><div class="tag">Option 2</div><div style="padding:16px 20px 18px"><span class="bh" style="font-size:18px;color:var(--fdeep)">Modern black frame station</span><ul class="tick"><li>Slim black steel frame with timber slat screens</li><li>Solar panels across the whole roof</li><li>Three single tubs, each with its own step</li></ul></div></div></div>
+      <div class="lift mixcard"><div class="disc dk">🧩</div><div><span class="bh" style="display:block;font-size:18px;color:var(--fdeep);margin-bottom:4px">Mix and match</span>You have the option to combine elements of each. The built in deck with the black frame, the standing baths under a solar roof, whatever suits your guests. We will build it to suit.</div></div>
     </div>
-    <div class="icebig">
-      <div class="lab bigcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe37bd6bb710ca4ba315.jpg" alt="Option 3, three barrel ice baths on the deck"><div><div class="tag">Option 3</div><div style="padding:22px 24px 26px"><span class="bh" style="font-size:22px;color:var(--fdeep)">Three standing ice baths</span><ul class="tick"><li>Three single person barrel ice baths</li><li>Each with its own timber step</li><li>Open decking around every bath</li></ul></div></div></div>
-      <img class="icecirc" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/f673183f-6a11-4d33-bd0a-300a113d570e.jpg" alt="A hand touching the still water of an ice bath">
-    </div>
+    <div class="lab bigcard rev"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbbe37bd6bb710ca4ba315.jpg" alt="Option 3, three barrel ice baths on the deck"><div><div class="tag">Option 3</div><div style="padding:22px 24px 26px"><span class="bh" style="font-size:22px;color:var(--fdeep)">Three standing ice baths</span><ul class="tick"><li>Three single person barrel ice baths</li><li>Each with its own timber step</li><li>Open decking around every bath</li></ul></div></div></div>
   </div>
 </section>
 
@@ -453,7 +453,7 @@
       b.style.gridTemplateColumns=b.classList.contains('rev')?sw+'px '+hw+'px':hw+'px '+sw+'px';
     });
     document.querySelectorAll('.jrow').forEach(function(r){
-      r.querySelectorAll(':scope>.lab').forEach(function(l){var i=l.querySelector('img');if(i&&i.naturalWidth&&window.innerWidth>760)l.style.flex=(i.naturalWidth/i.naturalHeight)+' 1 0';});
+      r.querySelectorAll(':scope>.lab,:scope>figure').forEach(function(l){var i=l.querySelector('img');if(i&&i.naturalWidth&&window.innerWidth>760)l.style.flex=(i.naturalWidth/i.naturalHeight)+' 1 0';});
     });
   }
   document.querySelectorAll('.blk img,.jrow img').forEach(function(i){if(!i.complete)i.addEventListener('load',lay);});
