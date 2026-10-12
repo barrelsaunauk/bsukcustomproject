@@ -48,7 +48,7 @@
   .tag{background:var(--fdeep);color:#fff;border-top:3px solid var(--honey);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 14px;}
   .cap{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);}
   .ph{position:relative;overflow:hidden;}
-  .ph>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .ph>img.bg,.ph>picture>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .veil{position:absolute;inset:0;pointer-events:none;}
   .onph{position:relative;z-index:2;color:#fff;}
   ul.tick{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;}
@@ -156,8 +156,8 @@
     section{padding:60px 0;}
     .g2,.g3{grid-template-columns:minmax(0,1fr);}
     .cards>.lift{flex-basis:100%;}
-    .hero{min-height:780px;}
-    .hero>img.bg{object-position:82% 50%!important;}
+    .hero{min-height:179vw;}
+    .hero>picture>img.bg{object-position:50% 100%!important;}
     .hero .veil{background:linear-gradient(180deg,rgba(22,38,28,.9) 0%,rgba(22,38,28,.72) 30%,rgba(22,38,28,.25) 55%,rgba(22,38,28,0) 75%);}
     .hero .top{padding:40px 20px 0;}
     .hero h1{font-size:38px;}
@@ -183,7 +183,7 @@
 
 <!-- 1 HERO -->
 <header class="ph hero">
-  <img class="bg" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbd0f0bd6bb710ca4d6f5c.png" alt="The ice bath station trailer and the globe sauna trailer parked side by side in a misty field" style="object-position:center 55%">
+  <picture><source media="(max-width:760px)" srcset="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/fa05b448-86b2-4a31-977c-566335b5b1c1.jpg"><img class="bg" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6acbd0f0bd6bb710ca4d6f5c.png" alt="The ice bath station trailer and the globe sauna trailer parked in a misty field" style="object-position:center 55%"></picture>
   <div class="veil"></div>
   <div class="onph top">
     <p class="k">Prepared for Grant Whittle and Gareth Evans</p>
