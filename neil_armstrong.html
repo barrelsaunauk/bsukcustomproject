@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Sauna and Hot Tub Cabin | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#16261C; --fdeep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+    --sage:#50795F; --sagep:#8fae86;
+    --honey:#C08B41; --honeyd:#b07d38; --honeyl:#D6A868;
+    --tint:#dbe7dd; --tintl:#eef4ef;
+    --ink:#3A4240; --inkl:#5C6663; --onDark:#dfe9df;
+    --shadow:0 10px 30px rgba(22,38,28,0.12);
+    --hair:1px solid rgba(31,61,40,0.10);
+    --face:'Raleway', Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#ffffff;}
+  body{font-family:var(--face);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;border:0;}
+  a{color:inherit;}
+  .bh{font-weight:700;}
+  .w{max-width:980px;margin:0 auto;padding:0 24px;}
+  section{padding:84px 0;}
+  .k{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--honey);margin-bottom:14px;}
+  h1,h2,h3{font-weight:700;letter-spacing:-.5px;line-height:1.08;text-wrap:balance;}
+  h2{font-size:clamp(30px,4.6vw,44px);color:var(--fdeep);margin-bottom:16px;}
+  h3{font-size:20px;color:var(--fdeep);letter-spacing:0;margin-bottom:6px;}
+  h2 span,h1 span{color:var(--honey);}
+  .lede{font-size:18px;color:var(--inkl);max-width:640px;}
+  .dark{background:var(--ground);color:var(--onDark);}
+  .dark h2,.onph h2{color:#ffffff;}
+  .dark h2 span,.onph h2 span,.onph h1 span{color:var(--honeyl);}
+  .dark .k,.onph .k{color:var(--honeyl);}
+  .dark .lede,.onph .lede{color:rgba(255,255,255,.88);}
+  .tintbg{background:var(--tintl);}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:var(--honey);color:#fff;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:17px 36px;border-radius:999px;}
+  .pill:hover{background:var(--honeyd);}
+  .lift{background:#fff;border:var(--hair);border-radius:18px;box-shadow:var(--shadow);padding:22px;}
+  .disc{flex:0 0 54px;width:54px;height:54px;border-radius:50%;background:var(--tintl);display:flex;align-items:center;justify-content:center;font-size:24px;}
+  .disc.dk{background:var(--fdeep);}
+  .row{display:flex;gap:16px;align-items:center;}
+  .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+  .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .lab{background:#fff;border:var(--hair);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);}
+  .lab img{width:100%;height:auto;}
+  .tag{background:var(--fdeep);color:#fff;border-top:3px solid var(--honey);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 14px;}
+  .txt2{padding:16px 22px 20px;font-size:15px;color:var(--inkl);}
+  .cap{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);}
+  .ph{position:relative;overflow:hidden;}
+  .ph>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .veil{position:absolute;inset:0;pointer-events:none;}
+  .onph{position:relative;z-index:2;color:#fff;}
+  ul.tick{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;font-size:15px;}
+  ul.tick li{position:relative;padding-left:20px;}
+  ul.tick li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:50%;background:var(--honey);}
+
+  /* hero */
+  .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;}
+  .hero>img.bg{object-position:65% 60%;}
+  .hero .veil{background:linear-gradient(90deg,rgba(22,38,28,.9) 0%,rgba(22,38,28,.72) 30%,rgba(22,38,28,.22) 55%,rgba(22,38,28,0) 70%);}
+  .hero .top{padding:60px 24px;width:100%;max-width:1180px;margin:0 auto;}
+  .hero h1{font-size:clamp(40px,5.4vw,72px);color:#fff;max-width:620px;margin:0 0 16px;text-shadow:0 2px 22px rgba(22,38,28,.5);}
+  .hero .sub{font-size:17px;color:#eef3ec;max-width:500px;margin:0 0 30px;text-shadow:0 1px 14px rgba(22,38,28,.6);}
+  .hero .pill{box-shadow:0 12px 28px rgba(22,38,28,.35);}
+  .hero .mob{display:none;}
+
+  /* brief cards */
+  .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:30px;}
+  .cards>.lift{flex:0 1 calc((100% - 36px)/3);min-width:0;}
+  .cards .bh{display:block;color:var(--fdeep);font-size:17px;line-height:1.3;margin-bottom:2px;}
+  .cards span{font-size:15px;color:var(--inkl);}
+
+  /* pill boxes with drawings */
+  .pbox{display:flex;gap:22px;align-items:center;background:#fff;border:var(--hair);border-radius:999px;box-shadow:var(--shadow);padding:16px 34px 16px 22px;}
+  .pbox img{width:110px;height:90px;object-fit:contain;flex:0 0 110px;}
+  .pbox .bh{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--fdeep);margin-bottom:2px;}
+  .pbox span{font-size:15px;color:var(--inkl);}
+
+  /* gallery rows: every photo at its own shape, same height, nothing cropped */
+  .gsub{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--honeyl);margin:40px 0 16px;}
+  .jrow{display:flex;gap:22px;align-items:flex-start;}
+  .jrow>*{min-width:0;}
+  .gfig{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 14px 34px rgba(0,0,0,.28);}
+  .gfig img{width:100%;height:auto;}
+
+  /* circle insert */
+  .mixcard{display:flex;gap:22px;align-items:center;border-top:4px solid var(--honey);font-size:15px;color:var(--inkl);}
+  .circsm{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--honey);box-shadow:var(--shadow);flex:0 0 150px;}
+
+  /* spec cards */
+  .spec .lift{border-top:4px solid var(--honey);}
+  .spec .head{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .spec .head img{width:64px;height:48px;object-fit:contain;}
+
+  /* shell colours */
+  .swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px;}
+  .sw{text-align:center;padding:22px 12px;}
+  .sw i{display:block;width:84px;height:84px;border-radius:50%;margin:0 auto 12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 6px 16px rgba(22,38,28,.14);}
+  .sw .bh{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fdeep);}
+  .mw{background:linear-gradient(135deg,#e4e3dc 0%,#f7f7f4 45%,#d6d6cf 100%);}
+  .mg{background:#76838f;}
+  .mb{background:radial-gradient(circle at 30% 30%,#4a4a4a 0%,#121212 55%);}
+  .mbr{background:linear-gradient(135deg,#b9a77e 0%,#9d8d63 50%,#c6b48a 100%);}
+  .mwh{background:linear-gradient(135deg,#dcdfe2 0%,#c7ccd1 50%,#e8eaec 100%);}
+  .mc{background:linear-gradient(135deg,#7a5c41 0%,#5e4430 55%,#86684b 100%);}
+  .mgr{background:linear-gradient(135deg,#2a7a47 0%,#1b5a33 55%,#2f8a52 100%);}
+  .mbl{background:linear-gradient(135deg,#3a78b4 0%,#255d93 55%,#4385c2 100%);}
+
+  /* details band circles */
+  .circ{width:205px;height:205px;border-radius:50%;object-fit:cover;border:3px solid var(--honeyl);margin:0 auto;}
+
+  /* estimate ledger */
+  .money{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid var(--tint);}
+  .money:first-child{border-top:0;}
+  .money>span:last-child{font-weight:700;white-space:nowrap;}
+  .money.sub2>span{font-size:15px;color:var(--inkl);}
+  .money.sub2>span:last-child{font-weight:400;}
+  .money.total{font-size:22px;color:var(--fdeep);}
+  .money.total>span:last-child{color:var(--honey);}
+
+  /* deposit timeline */
+  .steps{padding:8px 24px;}
+  .steps>div{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--tint);color:var(--ink);}
+  .steps>div:first-child{border-top:0;}
+  .steps .disc{flex:0 0 48px;width:48px;height:48px;font-size:21px;}
+  .steps .disc.on{background:var(--honey);}
+
+  /* footer */
+  .foot{padding:0 16px 24px;}
+  .foot .in{max-width:760px;margin:0 auto;background:var(--ground);color:#fff;border-radius:22px;overflow:hidden;text-align:center;padding:30px 24px 0;}
+  .foot .logo{width:150px;margin:0 auto 6px;}
+  .foot .icons{width:100%;max-width:520px;margin:0 auto 18px;}
+  .foot .sigcard{background:#fff;border-radius:16px 16px 0 0;margin:24px -24px 0;overflow:hidden;}
+  .foot .sigcard img{width:100%;}
+
+  @media (max-width:760px){
+    section{padding:60px 0;}
+    .g2,.g3{grid-template-columns:minmax(0,1fr);}
+    .cards>.lift{flex-basis:100%;}
+    .hero{min-height:0;background:var(--ground);display:block;}
+    .hero>img.bg,.hero .veil{display:none;}
+    .hero .top{padding:44px 20px 26px;}
+    .hero h1{font-size:38px;}
+    .hero .mob{display:block;width:100%;height:auto;}
+    .pbox{border-radius:22px;padding:16px 18px;}
+    .pbox img{width:80px;flex-basis:80px;}
+    .jrow{flex-direction:column;}
+    .jrow>*{flex:none!important;width:100%;}
+    .mixcard{flex-direction:column;text-align:center;}
+    .swatches{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .circ{width:150px;height:150px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 HERO -->
+<header class="ph hero">
+  <img class="bg" src="https://cdn.gamma.app/pz0mebb82mw2x1v/design-anything/UjqnTIbph1kdEmVMg2vOT/rjD53VmzOPyyNzu5l9Inw.jpg" alt="The sauna and hot tub cabin on brown composite decking in an Irish field">
+  <div class="veil"></div>
+  <div class="onph top">
+    <p class="k">Prepared for Neil Armstrong</p>
+    <h1>Your sauna and hot tub <span>cabin</span></h1>
+    <p class="sub">A wood fired sauna and hot tub under one roof, with a sitting space in between. Handbuilt to order in our Welsh workshop for your guest house.</p>
+    <a class="pill" href="https://www.barrelsaunauk.com/secure-your-build" target="_blank" rel="noopener">Secure your build</a>
+  </div>
+  <img class="mob" src="https://cdn.gamma.app/pz0mebb82mw2x1v/design-anything/UjqnTIbph1kdEmVMg2vOT/rjD53VmzOPyyNzu5l9Inw.jpg" alt="">
+</header>
+
+<!-- 2 YOUR BRIEF -->
+<section>
+  <div class="w">
+    <p class="k">From your call with James</p>
+    <h2>What you <span>asked for</span></h2>
+    <p class="lede">One combined unit for your guests, set on its own decked area.</p>
+    <div class="cards">
+      <div class="lift row"><div class="disc">♨️</div><div><span class="bh">Hot tub on the left</span><span>Its own room with open windows, jets and LED lights</span></div></div>
+      <div class="lift row"><div class="disc">🔥</div><div><span class="bh">Sauna on the right</span><span>Behind a tinted glass door, with an arched end window</span></div></div>
+      <div class="lift row"><div class="disc">🚪</div><div><span class="bh">Side door in the middle</span><span>Opening onto a sitting space between the two</span></div></div>
+      <div class="lift row"><div class="disc">🪵</div><div><span class="bh">Wood fired, both of them</span><span>Each stove loaded from outside, so no logs indoors</span></div></div>
+      <div class="lift row"><div class="disc">💡</div><div><span class="bh">Power for the extras</span><span>Your electric runs the pumps, jets and lighting</span></div></div>
+      <div class="lift row"><div class="disc">📐</div><div><span class="bh">Straight sides, curved roof</span><span>More headroom than a full barrel, inside and out</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 LAYOUT -->
+<section class="tintbg">
+  <div class="w g2" style="align-items:center">
+    <div>
+      <p class="k">How it fits together</p>
+      <h2>Your <span>layout</span></h2>
+      <p class="lede" style="margin-bottom:26px">5.9m from end to end. The hot tub room takes 3.56m, the sauna 2m, with the door and sitting space in between.</p>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div class="pbox"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee1430b0f957ccb86d28.png" alt=""><div><span class="bh">Hot tub room</span><span>3.56m, with a 2.4m tub</span></div></div>
+        <div class="pbox"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908e5.png" alt=""><div><span class="bh">Sauna</span><span>2m, two tiers of benches</span></div></div>
+      </div>
+    </div>
+    <div class="lab"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eb1ebf7eb1c9ee6b302.jpeg" alt="Side drawing of the cabin with measurements: 5900mm overall, 3562mm hot tub room, 2000mm sauna, 2400mm tub"><div class="tag">Measurements in millimetres</div></div>
+  </div>
+</section>
+
+<!-- 4 GALLERY -->
+<section class="dark">
+  <div class="w" style="max-width:1180px">
+    <div style="max-width:932px;margin:0 auto">
+      <p class="k">From a recent build</p>
+      <h2>Inside and <span>out</span></h2>
+      <p class="lede">This is the cabin your build is based on, finished and ready for its owners.</p>
+    </div>
+    <p class="gsub">Outside</p>
+    <figure class="gfig"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eb19d1e6954dd8f7482.jpeg" alt="The cabin outside, with the side door, the sauna stove door and the arched sauna end"><figcaption class="tag">Side door, stove door and arched sauna end</figcaption></figure>
+    <p class="gsub">The hot tub room</p>
+    <div class="jrow">
+      <figure class="gfig" style="flex:1.34 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eb03f79dad9305314dc.jpeg" alt="The hot tub seen through the open windows"><figcaption class="tag">Open windows either side</figcaption></figure>
+      <figure class="gfig" style="flex:0.75 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eadebf7eb1c9ee6b284.jpeg" alt="Looking down the length of the cabin from the hot tub end"><figcaption class="tag">Looking through to the sauna</figcaption></figure>
+    </div>
+    <p class="gsub">The sauna</p>
+    <div class="jrow">
+      <figure class="gfig" style="flex:1.34 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eaeebf7eb1c9ee6b290.jpeg" alt="Inside the sauna, two tiers of benches facing the arched window"><figcaption class="tag">The view from the bench</figcaption></figure>
+      <figure class="gfig" style="flex:0.8 1 0"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07ead9d1e6954dd8f740d.jpeg" alt="The tinted glass door into the sauna"><figcaption class="tag">Tinted glass sauna door</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5 SPEC -->
+<section>
+  <div class="w" style="max-width:1100px">
+    <p class="k">Everything included</p>
+    <h2>Your <span>spec</span></h2>
+    <p class="lede">The full build, room by room. We go through every detail with you on your spec call.</p>
+    <div class="g3 spec" style="margin-top:30px">
+      <div class="lift">
+        <div class="head"><h3>The cabin</h3></div>
+        <ul class="tick">
+          <li>Timber walls with stainless steel tightening bands</li>
+          <li>Curved roof finished in bitumen shingles</li>
+          <li>28mm pine floorboards</li>
+          <li>Timber side door with a double glazed window, timber handle and lock</li>
+        </ul>
+      </div>
+      <div class="lift">
+        <div class="head"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908e5.png" alt=""><h3>The sauna</h3></div>
+        <ul class="tick">
+          <li>Wood fired stove, loaded from outside</li>
+          <li>Tempered tinted glass door between the sauna and the sitting space</li>
+          <li>Tempered double glazed end window</li>
+          <li>Two benches, angled or straight, in Aspen or Black Alder</li>
+          <li>Two portable foot rests with the angled benches</li>
+          <li>Heat resistant plates around the stove</li>
+        </ul>
+      </div>
+      <div class="lift">
+        <div class="head"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee1430b0f957ccb86d28.png" alt=""><h3>The hot tub</h3></div>
+        <ul class="tick">
+          <li>Stainless steel wood fired heater, fed from outside</li>
+          <li>2m chimney with its protection</li>
+          <li>12 hydro massage jets</li>
+          <li>12 air jets on a 750W pump</li>
+          <li>3 in 1 controller for air, jets and lights</li>
+          <li>15 LED star lights</li>
+          <li>Hard wearing surround, steps and a drain valve</li>
+          <li>Electrical fuse safety box</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lift mixcard" style="margin-top:28px">
+      <img class="circsm" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ad07eadffb5e11c62e8e13d.jpeg" alt="Close up of the hot tub with headrests and a folding cover">
+      <div><p class="cap" style="margin-bottom:6px">Headrests and a folding cover</p>Soft headrests round the tub and a cover that folds back in one move, so the water stays warm between guests.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SHELL COLOURS -->
+<section class="tintbg">
+  <div class="w">
+    <p class="k">Make it yours</p>
+    <h2>Pick your <span>shell colour</span></h2>
+    <p class="lede">The hot tub shell comes in eight finishes. Colours on screen are a guide, and we can show you samples before you choose.</p>
+    <div class="swatches">
+      <div class="lift sw"><i class="mw"></i><span class="bh">White</span></div>
+      <div class="lift sw"><i class="mg"></i><span class="bh">Grey</span></div>
+      <div class="lift sw"><i class="mb"></i><span class="bh">Marble Black</span></div>
+      <div class="lift sw"><i class="mbr"></i><span class="bh">Marble Brown</span></div>
+      <div class="lift sw"><i class="mwh"></i><span class="bh">Marble White</span></div>
+      <div class="lift sw"><i class="mc"></i><span class="bh">Marble Coffee</span></div>
+      <div class="lift sw"><i class="mgr"></i><span class="bh">Marble Green</span></div>
+      <div class="lift sw"><i class="mbl"></i><span class="bh">Marble Blue</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 DETAILS BAND -->
+<div class="ph" style="display:flex;align-items:center">
+  <img class="bg" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png" alt="">
+  <div class="veil" style="background:rgba(22,38,28,.78)"></div>
+  <div class="onph w g2" style="align-items:center;padding-top:80px;padding-bottom:80px">
+    <div>
+      <p class="k">Handcrafted in Wales</p>
+      <h2>It's all in the <span>details</span></h2>
+      <p class="lede">Built in our Caerphilly workshop by people with carpentry in their blood. Our team already builds and installs in Ireland, so yours is in good hands from start to finish.</p>
+    </div>
+    <div style="display:flex;gap:22px;justify-content:center;flex-wrap:wrap;text-align:center">
+      <div><img class="circ" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffd1c641597c752ab184f.jpg" alt="Barrel Sauna UK nameplate on a door frame"><p class="cap" style="color:#dfe9df;margin-top:12px">Built in Wales</p></div>
+      <div><img class="circ" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png" alt="Stainless steel band tensioner"><p class="cap" style="color:#dfe9df;margin-top:12px">Stainless throughout</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 8 ESTIMATE -->
+<section id="estimate">
+  <div class="w g2" style="align-items:start">
+    <div>
+      <p class="k">Your estimate</p>
+      <h2>Where you <span>stand</span></h2>
+      <p class="lede">As you're based in Ireland, no UK VAT is added to your build. Delivery and installation to Ireland sit on their own line.</p>
+    </div>
+    <div class="lift" style="border-top:4px solid var(--honey)">
+      <div class="money"><span>Sauna and hot tub cabin, 5.9m, full spec as above</span><span>£25,000</span></div>
+      <div class="money sub2"><span>Delivery and installation to Ireland</span><span>Confirmed separately</span></div>
+      <div class="money total"><span><span class="bh">Your build</span></span><span>£25,000</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 DEPOSIT AND NEXT STEPS -->
+<section class="tintbg">
+  <div class="w g2" style="align-items:center">
+    <div>
+      <p class="k">Next in line</p>
+      <h2>Securing your <span>build spot</span></h2>
+      <p class="lede" style="margin-bottom:24px">You mentioned January or February for your guests. A £500 deposit gets you next in line, and your installation window is confirmed from there.</p>
+      <a class="pill" href="https://www.barrelsaunauk.com/secure-your-build" target="_blank" rel="noopener">Secure your build</a>
+    </div>
+    <div class="lift steps" style="border-top:4px solid var(--honey)">
+      <div><span class="disc on">💳</span><span>Deposit paid, you are next in line</span></div>
+      <div><span class="disc">📞</span><span>Spec call to lock in every detail</span></div>
+      <div><span class="disc">🔨</span><span>In build at our Caerphilly workshop</span></div>
+      <div><span class="disc">🚚</span><span>Delivered and installed at your guest house</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 FOOTER -->
+<footer class="foot" style="padding-top:24px">
+  <div class="in">
+    <img class="logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+    <img class="icons" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e53d3b2a8a6f15009063b.png" alt="Our range: barrel saunas, hot tubs, ice baths, mobile saunas, wood fired tubs, glamping pods, shepherd's huts and outdoor showers">
+    <p style="font-size:20px;font-weight:700">The Barrel Sauna UK Team</p>
+    <p style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px">barrelsaunauk.com · Handcrafted in Wales</p>
+    <div class="sigcard"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Millie, Barrel Sauna UK"></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function lay(){
+    document.querySelectorAll('.jrow').forEach(function(r){
+      r.querySelectorAll(':scope>figure').forEach(function(l){var i=l.querySelector('img');if(i&&i.naturalWidth&&window.innerWidth>760)l.style.flex=(i.naturalWidth/i.naturalHeight)+' 1 0';});
+    });
+  }
+  document.querySelectorAll('.jrow img').forEach(function(i){if(!i.complete)i.addEventListener('load',lay);});
+  window.addEventListener('resize',lay);window.addEventListener('load',lay);lay();
+})();
+</script>
+</body>
+</html>
