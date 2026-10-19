@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Build, Summarised | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2B5336;
+    --forest-dark:#243d29;
+    --sage:#50795F;
+    --sage-pale:#8fae86;
+    --sage-muted:#7d9a86;
+    --terracotta:#C08B41;
+    --honey:#C08B41;
+    --thermo:#96502B;
+    --bone:#F1F2EC;
+    --bone-dark:#e8eae2;
+    --panel:#f7f8f3;
+    --body:#4a4a4a;
+    --sub:#999999;
+    --char:#1C1B19;
+    --maroon:#5E1F28;
+    --maroon-bg:rgba(94,31,40,0.05);
+    --hairline:rgba(43,83,54,0.12);
+    --card-border:rgba(58,82,52,0.15);
+    --face-web:'Raleway',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bone);
+    font-family:var(--face-web);
+    font-weight:400;
+    color:var(--body);
+    line-height:1.8;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 32px}
+  .label{
+    font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--sage-muted);font-weight:400;line-height:1.5;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    background:var(--forest);
+    padding:72px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero:after{
+    content:'';position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    background:rgba(143,174,134,0.07);
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .hero .label{color:var(--sage-pale);margin-bottom:18px}
+  .hero h1{
+    font-size:52px;font-weight:400;letter-spacing:-1px;
+    color:var(--bone);line-height:1.08;margin-bottom:22px;
+  }
+  .hero p{
+    font-size:16px;color:var(--bone);opacity:0.9;
+    max-width:56ch;
+  }
+  .hero-rule{
+    width:56px;height:3px;background:var(--terracotta);
+    margin-top:32px;
+  }
+
+  /* ============ STACK ============ */
+  .stack{padding:64px 0 8px}
+  .item{
+    display:grid;grid-template-columns:64px 1fr;
+    gap:24px;padding:0 0 40px;
+    align-items:start;
+  }
+  .num{
+    font-size:15px;font-style:italic;font-weight:500;
+    color:var(--honey);line-height:1.4;padding-top:4px;
+    letter-spacing:0.5px;
+  }
+  .item-body{border-bottom:1px solid var(--hairline);padding-bottom:40px}
+  .item:last-of-type .item-body{border-bottom:none}
+  .item h2{
+    font-size:24px;font-weight:400;color:var(--forest);
+    line-height:1.25;margin-bottom:10px;letter-spacing:-0.3px;
+  }
+  .item p{font-size:15px;max-width:62ch}
+  .item p + p{margin-top:10px}
+  .status{
+    display:inline-block;margin-top:14px;
+    font-size:11px;letter-spacing:1.8px;text-transform:uppercase;
+    color:var(--thermo);
+    border:1px solid rgba(150,80,43,0.3);
+    border-radius:4px;padding:5px 12px;line-height:1.4;
+  }
+
+  /* ============ PRICE BAND ============ */
+  .band{background:var(--panel);padding:44px 0;margin:16px 0 0;
+    border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .band .label{margin-bottom:14px}
+  .band-row{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+  }
+  .band-name{font-size:19px;color:var(--forest);letter-spacing:0.2px}
+  .band-fig{font-size:32px;color:var(--terracotta);letter-spacing:0.5px;white-space:nowrap}
+  .band-note{font-size:13px;color:var(--sub);line-height:1.7;margin-top:16px;max-width:64ch}
+
+  /* ============ DEPOSIT GATE ============ */
+  .gate{
+    margin:56px 0 0;background:var(--maroon-bg);
+    border-left:6px solid var(--maroon);border-radius:8px;
+    padding:38px 42px;
+  }
+  .gate .g-title{
+    font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--maroon);margin-bottom:10px;
+  }
+  .gate .g-amount{
+    font-size:40px;color:var(--maroon);margin:4px 0 18px;font-weight:400;
+  }
+  .gate p{font-size:15px;margin-bottom:14px;max-width:64ch}
+  .g-list{list-style:none;margin:8px 0 20px}
+  .g-list li{
+    font-size:15px;color:var(--body);
+    padding:7px 0 7px 30px;position:relative;
+  }
+  .g-list li::before{
+    content:'✓';position:absolute;left:0;color:var(--maroon);font-size:16px;
+  }
+  .gate-cta{
+    display:inline-block;background:var(--maroon);color:#f7f0f1;
+    text-decoration:none;font-size:15px;letter-spacing:0.5px;
+    padding:15px 34px;border-radius:6px;margin:6px 0 6px;
+  }
+  .gate-cta:hover{background:var(--forest);color:#ffffff}
+  .g-fine{font-size:12px;color:#a5808a;margin-top:18px;line-height:1.7}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--forest);padding:44px 0 48px;
+    text-align:center;margin-top:64px;
+  }
+  .footer-inner{max-width:840px;margin:0 auto;padding:0 32px}
+  .sign{
+    font-size:14px;color:var(--sage-pale);
+    letter-spacing:1px;margin-bottom:22px;
+  }
+  footer .site{
+    display:inline-block;color:var(--bone);
+    border:2px solid var(--sage-pale);
+    font-size:14px;letter-spacing:0.5px;text-decoration:none;
+    padding:14px 30px;border-radius:6px;background:transparent;
+  }
+  footer .site:hover{background:var(--bone);color:var(--forest);border-color:var(--bone)}
+
+  @media (max-width:640px){
+    html,body{overflow-x:hidden}
+    .wrap,.footer-inner{padding:0 20px}
+    .hero{padding:52px 0 46px}
+    .hero h1{font-size:34px;line-height:1.12}
+    .hero p{font-size:15px}
+    .stack{padding:44px 0 8px}
+    .item{grid-template-columns:1fr;gap:6px;padding-bottom:32px}
+    .num{padding-top:0}
+    .item-body{padding-bottom:32px}
+    .item h2{font-size:21px}
+    .band{padding:34px 0}
+    .band-fig{font-size:27px}
+    .gate{padding:28px 22px;margin-top:40px}
+    .gate .g-amount{font-size:33px}
+    .gate p{font-size:14px}
+    .g-list li{font-size:14px}
+    .gate-cta{display:block;width:100%;text-align:center;padding:15px 20px}
+    footer{padding:40px 0 44px;margin-top:44px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="label">Barrel Sauna UK &middot; Prepared for Chris Hollis</div>
+    <h1>Where we got to</h1>
+    <p>A short summary of everything we covered, so you have it in one place. Nothing here is new, it is simply what we agreed written down.</p>
+    <div class="hero-rule"></div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section class="stack">
+  <div class="wrap">
+
+    <div class="item">
+      <div class="num">One</div>
+      <div class="item-body">
+        <h2>Underfloor heating</h2>
+        <p>Yes, we can include it. A ProWarm roll out mat system through the hut floor, which is the same setup used on comparable builds and integrates cleanly with the floor build up.</p>
+        <p>Jarek is pricing the system properly rather than working from a rough figure, so you get an exact number. For finishing features like this we organise and fit at cost price, with nothing added by us.</p>
+        <div class="status">Priced after Jarek&rsquo;s call</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">Two</div>
+      <div class="item-body">
+        <h2>The Double Dipper, wood fired</h2>
+        <p>Specified as a wood burning hot tub rather than the electric unit, set up for the hot and cold taps you are running to it. It heats from its own stove, so it needs no electric supply of its own.</p>
+        <div class="status">Priced after Jarek&rsquo;s call</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">Three</div>
+      <div class="item-body">
+        <h2>The decking</h2>
+        <p>You are back at the end of August, so we will do the site survey then and price the deck against what we find. It is a large space and the ground dictates the base, so it is worth getting right rather than guessing.</p>
+        <p>Jarek is checking ground screw pricing per square metre ahead of that visit, and we will be sourcing the lowest cost option before anyone comes out.</p>
+        <div class="status">Site survey, end of August</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">Four</div>
+      <div class="item-body">
+        <h2>Jarek&rsquo;s call</h2>
+        <p>Jarek, our build lead, will call you Friday. He holds the technical side of the build, so anything on layout, the heating system or the tub is best answered by him directly.</p>
+        <div class="status">Friday</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">Five</div>
+      <div class="item-body">
+        <h2>Delivery in March</h2>
+        <p>March gives the build proper time. This is a higher specification hut than most, with the heating, the tub and the decking all going in, and none of it benefits from being rushed through a queue.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PRICE BAND ================= -->
+<div class="band">
+  <div class="wrap">
+    <div class="label">Agreed so far</div>
+    <div class="band-row">
+      <span class="band-name">The Rowan and the mobile sauna</span>
+      <span class="band-fig">&pound;43,350 + VAT</span>
+    </div>
+    <p class="band-note">The underfloor heating, the wood fired tub and the decking sit outside this figure and are confirmed on your final estimate. Any further work is carried out at cost, materials and labour only, with nothing added by us.</p>
+  </div>
+</div>
+
+<!-- ================= DEPOSIT GATE ================= -->
+<div class="wrap">
+  <div class="gate">
+    <div class="g-title">To start everything moving</div>
+    <div class="g-amount">&pound;500 deposit</div>
+    <p>Your deposit is what puts the work in motion on our side. Once it is in:</p>
+    <ul class="g-list">
+      <li>We begin sourcing the lowest cost ground screw option for your deck</li>
+      <li>Jarek prices the underfloor heating system thoroughly</li>
+      <li>The wood fired tub is priced against your hot and cold supply</li>
+      <li>Your place in the build schedule is held</li>
+      <li>Working drawings for your chosen configuration are started</li>
+    </ul>
+    <p>The deposit is deducted in full from your final balance. Here is the link.</p>
+    <a class="gate-cta" href="https://www.barrelsaunauk.com/secure-your-build">Pay &pound;500 Deposit</a>
+    <p class="g-fine">The deposit is non-refundable. It holds your price for 72 hours while the final details are settled and your invoice is issued.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="sign">The Barrel Sauna UK Team</div>
+    <a class="site" href="https://www.barrelsaunauk.com/">www.barrelsaunauk.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
