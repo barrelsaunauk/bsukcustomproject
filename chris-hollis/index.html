@@ -7,86 +7,105 @@
 <title>Chris Hollis - BSUK The Rowan Project</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#111;font:300 16px/1.6 Poppins,Arial,sans-serif}
-header{background:#111;color:#fff;padding:36px 20px 32px}
-.wrap{max-width:860px;margin:0 auto}
-h1{font-weight:700;font-size:28px;line-height:1.2;margin:0 0 8px}
-header p{margin:0;color:#aaa;font-weight:300;font-size:15px}
-main{padding:32px 20px 60px}
-.note{border:1px solid #ddd;border-left:3px solid #2B5336;padding:12px 16px;margin:0 0 32px;font-size:14px;font-weight:300;color:#444}
-h2{font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2B5336;margin:36px 0 10px;padding-bottom:6px;border-bottom:1px solid #eee}
-table{width:100%;border-collapse:collapse;margin-bottom:8px}
-th{font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:#888;padding:8px 10px 6px;border-bottom:1px solid #ddd}
-td{padding:13px 10px;border-bottom:1px solid #f0f0f0;vertical-align:middle;font-size:14px;font-weight:300}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,Arial,sans-serif;background:#fff;color:#111}
+
+/* HEADER */
+.header{position:relative;overflow:hidden;min-height:320px}
+.hero-img{width:100%;height:320px;object-fit:cover;object-position:center;display:block}
+.veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,12,.92) 0%,rgba(10,22,12,.45) 55%,rgba(10,22,12,.1) 100%)}
+.header-text{position:absolute;bottom:0;left:0;right:0;padding:28px 32px}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#8fae86;margin-bottom:10px}
+h1{font-size:26px;font-weight:700;color:#fff;line-height:1.25}
+.subtitle{font-size:14px;font-weight:300;color:#adc8b0;margin-top:6px}
+
+/* BODY */
+.wrap{max-width:860px;margin:0 auto;padding:32px 24px 60px}
+.note{border-left:3px solid #2B5336;background:#f4f8f5;padding:12px 16px;font-size:13px;font-weight:300;color:#444;margin-bottom:32px}
+
+/* SECTIONS */
+.section-heading{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#2B5336;margin:32px 0 10px;padding-bottom:6px;border-bottom:1px solid #dde8df}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#999;padding:7px 10px 5px;border-bottom:1px solid #e0e0e0;text-align:left}
+td{padding:12px 10px;border-bottom:1px solid #f2f2f2;font-size:14px;font-weight:300;vertical-align:middle}
 td.name{font-weight:700;font-size:14px}
-td.date{color:#666;white-space:nowrap}
-a.btn{display:inline-block;background:#111;color:#fff;font-weight:700;font-size:12px;text-decoration:none;padding:7px 14px;border-radius:3px;white-space:nowrap;letter-spacing:.04em}
-a.btn:hover{background:#2B5336}
-h3{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#2B5336;margin:36px 0 10px;padding-bottom:6px;border-bottom:1px solid #eee}
-.archive{margin-top:8px}
-.archive li{padding:6px 0;border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:300;list-style:none}
-.archive li a{color:#111;text-decoration:none}
-.archive li a:hover{color:#2B5336;text-decoration:underline}
-.archive{padding:0;margin:0}
-footer{max-width:860px;margin:0 auto;padding:0 20px 40px;color:#aaa;font-size:12px;font-weight:300}
-@media(max-width:600px){h1{font-size:22px}th.date,td.date{display:none}}
+td.date{color:#888;font-size:13px;white-space:nowrap}
+a.btn{display:inline-block;background:#2B5336;color:#fff;font-weight:700;font-size:12px;text-decoration:none;padding:7px 18px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
+a.btn:hover{background:#1F3D28}
+
+/* ARCHIVE */
+.archive-heading{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#bbb;margin:40px 0 10px;padding-bottom:6px;border-bottom:1px solid #eee}
+.archive{list-style:none;padding:0}
+.archive li{padding:6px 0;border-bottom:1px solid #f7f7f7;font-size:13px;font-weight:300}
+.archive a{color:#2B5336;text-decoration:none}
+.archive a:hover{text-decoration:underline}
+
+footer{max-width:860px;margin:0 auto;padding:0 24px 40px;color:#bbb;font-size:12px;font-weight:300}
+
+@media(max-width:600px){
+  .header-text{padding:20px 16px}
+  h1{font-size:21px}
+  .hero-img{height:240px}
+  .wrap{padding:24px 16px 48px}
+  th.date,td.date{display:none}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<h1>Chris Hollis - BSUK 'The Rowan' Project</h1>
-<p>Praa Sands, Cornwall. Every drawing and page for this project, saved in one place.</p>
-</div></header>
-<main><div class="wrap">
 
-<p class="note">This is a living document. All drawings are subject to change until formally agreed.</p>
+<div class="header">
+  <img class="hero-img" src="https://files.leadconnectorhq.com/file/6afbf0ca77a01e462244e7cd/the-rowan-project-deccking-hero-image.jpg" alt="The Rowan - plan and 3D render">
+  <div class="veil"></div>
+  <div class="header-text">
+    <div class="kicker">BSUK Custom Project</div>
+    <h1>Chris Hollis &mdash; The Rowan</h1>
+    <p class="subtitle">Praa Sands, Cornwall. Every drawing and page for this project, saved in one place.</p>
+  </div>
+</div>
 
-<h2>Decking option, revision 1</h2>
-<table>
-<tr><th>File</th><th class="date">Date</th><th>Open</th></tr>
-<tr>
-<td class="name">Decking v1 drawings</td>
-<td class="date">16 Nov 2026</td>
-<td><a class="btn" href="decking_v1_drawings.html">Open</a></td>
-</tr>
-<tr>
-<td class="name">Decking v1 drawings PDF</td>
-<td class="date">16 Nov 2026</td>
-<td><a class="btn" href="decking_1_drawings.pdf">Open</a></td>
-</tr>
-<tr>
-<td class="name">Decking v1 3D colour</td>
-<td class="date">16 Nov 2026</td>
-<td><a class="btn" href="decking_v1_3d_colour.html">Open</a></td>
-</tr>
-<tr>
-<td class="name">Decking v1 3D colour, option 2</td>
-<td class="date">16 Nov 2026</td>
-<td><a class="btn" href="decking-1-3d.html">Open</a></td>
-</tr>
-</table>
+<div class="wrap">
 
-<h2>Patio option, revision 1</h2>
-<table>
-<tr><th>File</th><th class="date">Date</th><th>Open</th></tr>
-</table>
+  <p class="note">This is a living document. All drawings are subject to change until formally agreed.</p>
 
-<h3>Archive</h3>
-<ul class="archive">
-<li><a href="../chris_hollis.html">chris hollis</a></li>
-<li><a href="../chris_hollis_decking_A3_drawing.html">chris hollis decking A3 drawing</a></li>
-<li><a href="../chris_hollis_decking_option_3D_colour.html">chris hollis decking option 3D colour</a></li>
-<li><a href="../chris_hollis_proposal_old.html">chris hollis proposal old</a></li>
-<li><a href="../chris_hollis_summary.html">chris hollis summary</a></li>
-<li><a href="../chris_hollis_v6.html">chris hollis v6</a></li>
-<li><a href="decking_v1_drawings.html">decking v1 drawings</a></li>
-<li><a href="decking_v1_3d_colour.html">decking v1 3D colour</a></li>
-<li><a href="decking-1-drawings.html">decking 1 drawings</a></li>
-<li><a href="decking-1-3d.html">decking 1 3D</a></li>
-</ul>
+  <div class="section-heading">Decking option, revision 1</div>
+  <table>
+    <tr><th>File</th><th class="date">Date</th><th>Open</th></tr>
+    <tr>
+      <td class="name">Decking v1 drawings</td>
+      <td class="date">16 Nov 2026</td>
+      <td><a class="btn" href="decking_v1_drawings.html">Open</a></td>
+    </tr>
+    <tr>
+      <td class="name">Decking v1 drawings PDF</td>
+      <td class="date">16 Nov 2026</td>
+      <td><a class="btn" href="decking_1_drawings.pdf">Open</a></td>
+    </tr>
+    <tr>
+      <td class="name">Decking v1 3D colour</td>
+      <td class="date">16 Nov 2026</td>
+      <td><a class="btn" href="decking_v1_3d_colour.html">Open</a></td>
+    </tr>
+  </table>
 
-</div></main>
-<footer>Barrel Sauna UK. Project index, 17 Nov 2026.</footer>
+  <div class="section-heading">Patio option, revision 1</div>
+  <table>
+    <tr><th>File</th><th class="date">Date</th><th>Open</th></tr>
+  </table>
+
+  <div class="archive-heading">Archive</div>
+  <ul class="archive">
+    <li><a href="../chris_hollis.html">chris hollis</a></li>
+    <li><a href="../chris_hollis_decking_A3_drawing.html">chris hollis decking A3 drawing</a></li>
+    <li><a href="../chris_hollis_proposal_old.html">chris hollis proposal old</a></li>
+    <li><a href="../chris_hollis_summary.html">chris hollis summary</a></li>
+    <li><a href="../chris_hollis_v6.html">chris hollis v6</a></li>
+  </ul>
+
+</div>
+
+<footer>Barrel Sauna UK &mdash; Project index, 17 Nov 2026.</footer>
+
 </body>
 </html>
