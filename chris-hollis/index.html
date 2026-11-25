@@ -24,6 +24,17 @@ h1 em{font-style:normal;color:#D6A868}
 .wrap{max-width:860px;margin:0 auto;padding:32px 24px 60px}
 .note{border-left:3px solid #2B5336;background:#eef4ef;padding:12px 16px;font-size:13px;font-weight:300;color:#444;margin-bottom:32px}
 
+/* LATEST */
+.latest{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;border:2px solid #8e4585;border-radius:14px;padding:18px 20px;margin-bottom:28px;background:#fbf3f8;box-shadow:0 10px 28px rgba(142,69,133,.16)}
+.latest .lic{width:54px;height:54px;border-radius:50%;background:#4a2340;display:grid;place-items:center;font-size:26px;font-weight:700;color:#fff}
+.latest .lk{display:inline-block;background:#8e4585;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:4px}
+.latest h3{font-size:17px;font-weight:700;line-height:1.3}
+.latest p{font-size:13px;font-weight:300;color:#444;margin-top:2px}
+.latest a{display:inline-block;background:#8e4585;color:#fff;font-weight:700;font-size:13px;text-decoration:none;padding:10px 20px;border-radius:999px;white-space:nowrap}
+tr.new td{background:#fbf3f8}
+.newtag{display:inline-block;background:#8e4585;color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+@media(max-width:600px){.latest{grid-template-columns:1fr;text-align:left}.latest .lic{display:none}.latest a{text-align:center}}
+
 /* POINTS TO RAISE */
 .raise{border:2px solid #8f1d14;border-radius:10px;overflow:hidden;margin-bottom:36px}
 .raise-head{background:#8f1d14;color:#fff;padding:16px 20px}
@@ -104,23 +115,34 @@ footer{max-width:860px;margin:0 auto;padding:0 24px 40px;color:#aaa;font-size:12
 
   <p class="note">This is a living document. All drawings are subject to change until formally agreed.</p>
 
+  <a id="latest"></a>
+  <div class="latest">
+    <div class="lic">&#8594;</div>
+    <div>
+      <span class="lk">Latest · 25 Nov 2026</span>
+      <h3>Width, roof and chassis</h3>
+      <p>The one decision we need (2.4 or 2.6 wide), your roof, and the chassis drawn from our workshop's measurements.</p>
+    </div>
+    <a href="trailer_1_drawings_v3.html">Open the latest</a>
+  </div>
+
   <section class="raise" id="points">
     <div class="raise-head">
       <div class="rk">Before we build</div>
       <h2>Points to raise</h2>
-      <p>Still open, 25 Nov 2026. Answers in writing in the group, please.</p>
+      <p>Still open, updated 25 Nov 2026. Answers in writing in the group, please.</p>
     </div>
 
     <div class="pt slim">
       <div class="num">1</div>
-      <h3>Roof<span class="tag urgent">Urgent</span></h3>
-      <div class="ask"><b>Chris:</b> raised front roof (A, about 3480) or our standard curved roof (B, about 3350, pergola stands clear of the hut)? See sheet 107.</div>
+      <h3>Width<span class="tag urgent">Urgent</span></h3>
+      <div class="ask"><b>Chris:</b> 2.4 or 2.6 wide? This is what is holding the build. See the <a href="trailer_1_drawings_v3.html" style="color:#8f1d14;font-weight:700">latest page</a>.</div>
     </div>
 
     <div class="pt slim">
       <div class="num">2</div>
-      <h3>Hut length<span class="tag urgent">Urgent</span></h3>
-      <div class="ask"><b>Jarek:</b> axle figures give a 5450 chassis, the pack shows 5500. Confirm the final body size.</div>
+      <h3>Roof<span class="tag urgent">Urgent</span></h3>
+      <div class="ask"><b>Our plan:</b> the standard Rowan roof, as on his council drawing. Delyth to talk it through on her call, Thursday 26 Nov.</div>
     </div>
 
     <div class="pt slim">
@@ -153,8 +175,18 @@ footer{max-width:860px;margin:0 auto;padding:0 24px 40px;color:#aaa;font-size:12
       <div class="ask"><b>Jarek:</b> the pergola bolts down to a hard base. How do we fix it on the deck?</div>
     </div>
 
-    <div class="done"><b>Answered:</b> pergola 4 × 3 m, Shadow Metal Pergola W24180 · louvre clearance 90 · chassis and wheel positions, sheet 106.</div>
+    <div class="done"><b>Answered:</b> pergola 4 × 3 m, Shadow Metal Pergola W24180 · louvre clearance 90 · chassis 5450 long, axles 3500 apart, 950 and 1000 overhangs, 2000 over wheels, frame top 550 (workshop, 25 Nov).</div>
   </section>
+
+  <div class="section-heading">Width, roof and chassis, revision A</div>
+  <table>
+    <tr><th>File</th><th class="date">Date</th><th></th></tr>
+    <tr class="new">
+      <td class="name">Width, roof and chassis<span class="newtag">New</span><span>The width decision, the roof, the journey and the chassis drawing</span></td>
+      <td class="date">25 Nov 2026</td>
+      <td class="go"><a class="btn" href="trailer_1_drawings_v3.html">Open</a></td>
+    </tr>
+  </table>
 
   <div class="section-heading">Decking option, revision D</div>
   <table>
